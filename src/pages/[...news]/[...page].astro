@@ -1,11 +1,14 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import { Icon } from 'astro-icon/components';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
-// import PostTags from "~/components/blog/Tags.astro";
+import ProjectFilter from '~/components/news/ProjectFilter.astro';
+import AggregatedNewsCard from '~/components/news/AggregatedNewsCard.astro';
+import { PROJECT_FEEDS } from '~/data/feeds.config';
+import type { AggregatedPost } from '~/types';
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
@@ -20,11 +23,14 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
-// const allCategories = await findCategories();
-// const allTags = await findTags();
+const filterSources = [
+  { id: 'jim-matheos', name: 'Jim Matheos' },
+  ...PROJECT_FEEDS.map((f) => ({ id: f.id, name: f.name })),
+];
 
 const metadata = {
-  title: `${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `News${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description: "Latest news, announcements, and updates across Jim Matheos's projects.",
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -36,13 +42,51 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline subtitle="Archive of all news items"> News </Headline>
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-5xl">
+    <Headline subtitle="Latest news, announcements, and updates across all projects"> News & Updates </Headline>
+
+    {/* Facebook Social Stream Connection Card */}
+    <div
+      class="mb-8 p-4 sm:p-5 rounded-xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+    >
+      <div class="flex items-center gap-3.5">
+        <div
+          class="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/40 flex items-center justify-center shrink-0 text-blue-400"
+        >
+          <Icon name="tabler:brand-facebook" class="w-5 h-5" />
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">Jim Matheos Official Facebook</h3>
+          <p class="text-xs text-neutral-400">
+            Follow Jim's official Facebook profile for personal notes, updates, and photos.
+          </p>
+        </div>
+      </div>
+      <a
+        href="https://www.facebook.com/JimMatheosOfficial"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700 transition shrink-0"
+      >
+        <span>View Facebook Page</span>
+        <Icon name="tabler:external-link" class="w-3.5 h-3.5 text-neutral-400" />
+      </a>
+    </div>
+
+    {/* Progressive Enhancement Filter */}
+    <ProjectFilter sources={filterSources} />
+
+    {/* Aggregated Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {page.data.map((post: AggregatedPost) => <AggregatedNewsCard post={post} />)}
+    </div>
+
+    <div id="news-empty-message" style="display: none;" class="text-center py-12 text-neutral-400 text-sm">
+      No updates found for the selected project.
+    </div>
+
+    <div class="mt-8">
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </div>
   </section>
 </Layout>

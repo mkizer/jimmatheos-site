@@ -1,0 +1,137 @@
+[
+  {
+    "id": "prs-custom-24-black",
+    "title": "PRS Custom 24 (Black)",
+    "status": "current",
+    "caption": "1992 PRS Custom 24 in Black finish - primary studio and live instrument",
+    "image": "../assets/images/guitars/PRS Black.JPG",
+    "order": 1,
+    "details": "Owned since 1992 and played on every recording and most tours ever since. A wonderfully balanced instrument that Jim reaches for most in the studio."
+  },
+  {
+    "id": "prs-custom-24-blue",
+    "title": "PRS Custom 24 (Blue)",
+    "status": "current",
+    "caption": "PRS Custom 24 in Blue finish",
+    "image": "../assets/images/guitars/PRS Blu.JPG",
+    "order": 2,
+    "details": "Key touring and recording instrument for Fates Warning and OSI."
+  },
+  {
+    "id": "prs-custom-24-natural",
+    "title": "PRS Custom 24 (Natural)",
+    "status": "current",
+    "caption": "PRS Custom 24 in Natural figured maple finish",
+    "image": "../assets/images/guitars/PRS Nat.JPG",
+    "order": 3,
+    "details": "Featured extensively across live tours and studio tracking."
+  },
+  {
+    "id": "prs-singlecut",
+    "title": "PRS Singlecut",
+    "status": "current",
+    "caption": "PRS Singlecut (Sunburst)",
+    "image": "../assets/images/guitars/PRS SC.JPG",
+    "order": 4,
+    "details": "Used for heavy, thick rhythm guitar tracking and alternate tunings."
+  },
+  {
+    "id": "prs-hollowbody",
+    "title": "PRS Hollowbody",
+    "status": "current",
+    "caption": "PRS Hollowbody",
+    "image": "../assets/images/guitars/PRS Hollow.JPG",
+    "order": 5,
+    "details": "Used for resonant clean textures and acoustic blend sounds."
+  },
+  {
+    "id": "godin-lgx",
+    "title": "Godin LGX",
+    "status": "current",
+    "caption": "Godin LGX with Piezo acoustic output",
+    "image": "../assets/images/guitars/Godin.JPG",
+    "order": 6,
+    "details": "Used for clean and piezo sounds. Frequently used to blend magnetic pickups in stereo with acoustic tone in the center."
+  },
+  {
+    "id": "alvarez-acoustic",
+    "title": "Alvarez Acoustic",
+    "status": "current",
+    "caption": "Alvarez Acoustic 6-String",
+    "image": "../assets/images/guitars/Alvarez.JPG",
+    "order": 7,
+    "details": "Studio acoustic guitar used on ballad and ambient passages."
+  },
+  {
+    "id": "bouzouki",
+    "title": "Irish Bouzouki",
+    "status": "current",
+    "caption": "Irish Bouzouki",
+    "image": "../assets/images/guitars/Bouzouki.JPG",
+    "order": 8,
+    "details": "Specialty instrument used for folk, atmospheric, and acoustic layered arrangements."
+  },
+  {
+    "id": "ovation-6",
+    "title": "Ovation 6-String",
+    "status": "current",
+    "caption": "Ovation 6-String Acoustic-Electric",
+    "image": "../assets/images/guitars/Ovation 6.JPG",
+    "order": 9,
+    "details": "Mainstay acoustic-electric used on tour with Fates Warning and OSI."
+  },
+  {
+    "id": "ovation-12",
+    "title": "Ovation 12-String",
+    "status": "current",
+    "caption": "Ovation 12-String Acoustic-Electric",
+    "image": "../assets/images/guitars/Ovation 12.JPG",
+    "order": 10,
+    "details": "Signature 12-string acoustic textures heard on classic Fates Warning records."
+  },
+  {
+    "id": "bc-rich-black",
+    "title": "B.C. Rich (Black)",
+    "status": "past",
+    "caption": "B.C. Rich (Black) used in early Fates Warning era",
+    "image": "../assets/images/guitars/BC Rich Black.jpg",
+    "order": 11,
+    "details": "Early 1980s metal weapon used during the Night on Bröcken and The Spectre Within eras."
+  },
+  {
+    "id": "explorer",
+    "title": "Explorer",
+    "status": "past",
+    "caption": "Hamer / Gibson Explorer",
+    "image": "../assets/images/guitars/Explorer.jpg",
+    "order": 12,
+    "details": "Used during the mid-80s Awaken the Guardian era."
+  },
+  {
+    "id": "jackson-soloist",
+    "title": "Jackson Soloist",
+    "status": "past",
+    "caption": "Jackson Soloist with Floyd Rose",
+    "image": "../assets/images/guitars/Jackson.jpg",
+    "order": 13,
+    "details": "Touring workhorse from the late 1980s No Exit and Perfect Symmetry tours."
+  },
+  {
+    "id": "gibson-sg",
+    "title": "Gibson SG",
+    "status": "past",
+    "caption": "Gibson SG",
+    "image": "../assets/images/guitars/SG .JPG",
+    "order": 14,
+    "details": "Classic double-cutaway mahogany guitar used for vintage rock and rhythm tones."
+  },
+  {
+    "id": "steinberger-gm",
+    "title": "Steinberger GM",
+    "status": "past",
+    "caption": "Steinberger GM headless electric guitar",
+    "image": "../assets/images/guitars/Steinberger.jpg",
+    "order": 15,
+    "details": "Played extensively during the Parallels and Inside Out eras."
+  }
+]

@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import Layout from '~/layouts/PageLayout.astro';
+import DiscographyFilter from '~/components/discography/DiscographyFilter.astro';
+import DiscographyCard from '~/components/discography/DiscographyCard.astro';
+
+const allAlbums = await getCollection('discography');
+
+// Sort descending by release year
+const sortedAlbums = allAlbums.sort((a, b) => b.data.year - a.data.year);
+
+// Extract distinct bands in logical order (primary bands first, then others)
+const priorityBands = [
+  'Fates Warning',
+  'OSI',
+  'Arch / Matheos',
+  'North Sea Echoes',
+  'Kings of Mercia',
+  'Tuesday The Sky',
+  'Jim Matheos',
+];
+
+const availableBands: string[] = Array.from(new Set(sortedAlbums.map((item) => String(item.data.band))));
+const sortedBandList: string[] = [
+  ...priorityBands.filter((b) => availableBands.includes(b)),
+  ...availableBands.filter((b) => !priorityBands.includes(b)),
+];
+
+const metadata = {
+  title: 'Discography | Jim Matheos',
+  description:
+    'Complete catalog of releases by Jim Matheos with Fates Warning, OSI, Arch / Matheos, North Sea Echoes, Kings of Mercia, Tuesday The Sky, and solo works.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Discography</h1>
+      <p class="mt-4 text-lg text-neutral-400 font-medium max-w-3xl mx-auto">
+        Four decades of albums across Fates Warning, OSI, Arch / Matheos, North Sea Echoes, Kings of Mercia, Tuesday The
+        Sky, and solo works.
+      </p>
+
+      {/* Retailer Direct Links Callout */}
+      <div
+        class="mt-8 p-4 rounded-xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm max-w-3xl mx-auto text-xs text-neutral-400 flex flex-wrap items-center justify-center gap-3"
+      >
+        <span class="font-semibold text-neutral-300">Catalog Stores:</span>
+        <a
+          href="https://www.indiemerch.com/metalbladerecords/band/fates-warning"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-neutral-300 hover:text-white underline decoration-neutral-600 hover:decoration-white transition"
+        >
+          <span>Metal Blade Store</span>
+          <Icon name="tabler:external-link" class="w-3 h-3" />
+        </a>
+        <span class="text-neutral-600">•</span>
+        <a
+          href="https://www.burningshed.com/store/osi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-neutral-300 hover:text-white underline decoration-neutral-600 hover:decoration-white transition"
+        >
+          <span>Burning Shed (OSI / Tuesday The Sky)</span>
+          <Icon name="tabler:external-link" class="w-3 h-3" />
+        </a>
+        <span class="text-neutral-600">•</span>
+        <a
+          href="https://www.amazon.com/music-rock-classical-pop-jazz/b/?_encoding=UTF8&node=5174"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-neutral-300 hover:text-white underline decoration-neutral-600 hover:decoration-white transition"
+        >
+          <span>Amazon</span>
+          <Icon name="tabler:external-link" class="w-3 h-3" />
+        </a>
+      </div>
+    </div>
+
+    {/* Progressive Enhancement Web Component Filter */}
+    <DiscographyFilter bands={sortedBandList} />
+
+    {/* Albums Grid */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sortedAlbums.map((album) => <DiscographyCard entry={album} />)}
+    </div>
+
+    {/* Empty State */}
+    <div id="discography-empty-message" style="display: none;" class="text-center py-16 text-neutral-400 text-sm">
+      No albums found for the selected band filter.
+    </div>
+  </section>
+</Layout>

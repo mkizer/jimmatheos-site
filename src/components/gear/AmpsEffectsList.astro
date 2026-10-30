@@ -1,0 +1,182 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import mesaImg from '~/assets/images/mesa_boogie_mk_iv.jpg';
+import rackImg from '~/assets/images/line_6_pod_kemper.jpg';
+import diamondImg from '~/assets/images/diamond_pedals.jpg';
+---
+
+<div class="mb-16">
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Amps & Effects</h2>
+    <p class="mt-2 text-sm text-neutral-400">
+      Equipment overview, studio signal chains, and gear commentary by Jim Matheos.
+    </p>
+  </div>
+
+  {/* Quick Spec Lists */}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    {/* Amps */}
+    <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm">
+      <div class="flex items-center gap-2 mb-4 text-white">
+        <Icon name="tabler:speakerphone" class="w-5 h-5 text-neutral-400" />
+        <h3 class="font-bold text-lg">Amps</h3>
+      </div>
+      <ul class="space-y-2 text-sm text-neutral-300">
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>1991 Mesa Boogie MK IV</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Tube Works MosValve 1160</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Fender Hot Rod Deluxe</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Gallien Kruger 250RL</span>
+        </li>
+      </ul>
+    </div>
+
+    {/* Pre-Amps & Profilers */}
+    <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm">
+      <div class="flex items-center gap-2 mb-4 text-white">
+        <Icon name="tabler:adjustments" class="w-5 h-5 text-neutral-400" />
+        <h3 class="font-bold text-lg">Pre-Amps & Digital</h3>
+      </div>
+      <ul class="space-y-2 text-sm text-neutral-300">
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Kemper Profiler Amp</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Tech 21 SansAmp PSA-1 / RBI</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Line 6 POD XT Pro</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Access Music Virus B (Synth)</span>
+        </li>
+      </ul>
+    </div>
+
+    {/* Effects */}
+    <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm">
+      <div class="flex items-center gap-2 mb-4 text-white">
+        <Icon name="tabler:wave-sine" class="w-5 h-5 text-neutral-400" />
+        <h3 class="font-bold text-lg">Effects & Pedals</h3>
+      </div>
+      <ul class="space-y-2 text-sm text-neutral-300">
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>TC Electronic G-Major</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Diamond Tremolo & Vibrato</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Linn Design Adrenalinn II</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Death By Audio Super Sonic Fuzz Gun</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Boss CS-2 Compressor</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Malekko Ekko 616 Delay</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+          <span>Pigtronix Philosopher's Tone, Phaser, Fat Drive</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {/* Detailed Equipment Spotlights with Jim's Quotes */}
+  <div class="space-y-8">
+    {/* Mesa Boogie Spotlight */}
+    <div
+      class="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 sm:p-8 flex flex-col md:flex-row gap-6 items-center"
+    >
+      <div class="w-full md:w-2/5 shrink-0 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950">
+        <Image src={mesaImg} alt="Mesa Boogie MK IV" width={600} class="w-full h-auto object-cover" />
+        <div class="p-2 text-center text-xs text-neutral-400 bg-neutral-950 border-t border-neutral-900">
+          Mesa Boogie MK IV (Owned since 1991)
+        </div>
+      </div>
+      <div class="w-full md:w-3/5">
+        <span class="text-xs font-semibold uppercase tracking-wider text-neutral-400">Core Signature Sound</span>
+        <h3 class="text-xl font-bold text-white mt-1">1991 Mesa Boogie MK IV</h3>
+        <p class="mt-3 text-sm text-neutral-300 leading-relaxed italic">
+          “The Mesa Boogie is my shortest line to a ‘real’ amp. I’ve been using it since about 1994, and since then the
+          MK IV has been on every Fates Warning record and on many tours. It has a unique sound but is also very
+          versatile. I mainly use it for heavy rhythm guitars. It takes a while to figure out exactly how to set it up,
+          but once you get the hang of it, you’ll be richly rewarded.”
+        </p>
+      </div>
+    </div>
+
+    {/* Rack & Profilers Spotlight */}
+    <div
+      class="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 sm:p-8 flex flex-col md:flex-row gap-6 items-center"
+    >
+      <div class="w-full md:w-2/5 shrink-0 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950">
+        <Image src={rackImg} alt="Studio and Touring Rack Gear" width={600} class="w-full h-auto object-cover" />
+        <div class="p-2 text-center text-xs text-neutral-400 bg-neutral-950 border-t border-neutral-900">
+          Tech 21 SansAmp RBI, TC Electronic G-Major, Line 6 POD XT Pro, Kemper Profiler
+        </div>
+      </div>
+      <div class="w-full md:w-3/5">
+        <span class="text-xs font-semibold uppercase tracking-wider text-neutral-400">Studio & Live Processing</span>
+        <h3 class="text-xl font-bold text-white mt-1">Kemper Profiler & Line 6 POD XT Pro</h3>
+        <p class="mt-3 text-sm text-neutral-300 leading-relaxed italic">
+          “As much as I love my MK IV and other real-life amps, there’s no denying that the Kemper sounds great, and
+          ease of use is also a major plus. The last Fates Warning disc was mostly a combination of the Kemper and my MK
+          IV... People would also be surprised at how much I use the POD XT Pro for clean tones and funky lo-fi sounds
+          like on OSI and Tuesday The Sky.”
+        </p>
+      </div>
+    </div>
+
+    {/* Pedals Spotlight */}
+    <div
+      class="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 sm:p-8 flex flex-col md:flex-row gap-6 items-center"
+    >
+      <div class="w-full md:w-2/5 shrink-0 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950">
+        <Image
+          src={diamondImg}
+          alt="Diamond Tremolo and Vibrato Pedals"
+          width={600}
+          class="w-full h-auto object-cover"
+        />
+        <div class="p-2 text-center text-xs text-neutral-400 bg-neutral-950 border-t border-neutral-900">
+          Diamond Pedals Tremolo & Vibrato
+        </div>
+      </div>
+      <div class="w-full md:w-3/5">
+        <span class="text-xs font-semibold uppercase tracking-wider text-neutral-400">Modulation Pedals</span>
+        <h3 class="text-xl font-bold text-white mt-1">Diamond Tremolo & Vibrato</h3>
+        <p class="mt-3 text-sm text-neutral-300 leading-relaxed italic">
+          “I love both pedals! They are extremely versatile and sound wonderfully warm. The tremolo pedal, which lets
+          you tap in all standard BPMs, also has a mode button that can create some really cool and fancy rhythms. Both
+          pedals were used extensively on both Tuesday The Sky discs.”
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

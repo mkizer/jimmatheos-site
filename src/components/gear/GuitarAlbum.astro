@@ -1,0 +1,113 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  guitars: CollectionEntry<'gear'>[];
+  idPrefix: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { guitars, idPrefix, title, subtitle } = Astro.props;
+---
+
+<div class="mb-16">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{title}</h2>
+    {subtitle && <p class="mt-2 text-sm text-neutral-400">{subtitle}</p>}
+  </div>
+
+  <!-- Grid of Guitar Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-start">
+    {
+      guitars.map((guitar, index) => (
+        <div class="group relative">
+          <button
+            type="button"
+            onclick={`document.getElementById('${idPrefix}-dialog-${index}').showModal()`}
+            class="w-full text-left overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/40 p-2.5 transition-all duration-300 hover:scale-[1.02] hover:border-neutral-600 hover:bg-neutral-900/80 hover:shadow-xl hover:shadow-black/50 block focus:outline-none focus:ring-2 focus:ring-neutral-400 cursor-pointer"
+          >
+            <div class="relative aspect-3/4 overflow-hidden rounded-lg bg-neutral-950 flex items-center justify-center">
+              <Image
+                src={guitar.data.image}
+                alt={guitar.data.title}
+                width={500}
+                class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            {/* Caption on Card */}
+            <div class="mt-2.5 px-1 pb-1">
+              <h3 class="text-xs font-semibold text-white truncate group-hover:text-neutral-200">
+                {guitar.data.title}
+              </h3>
+              <p class="text-[11px] text-neutral-400 line-clamp-1 mt-0.5">{guitar.data.caption}</p>
+            </div>
+          </button>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Modal Lightboxes for this album -->
+  {
+    guitars.map((guitar, index) => (
+      <dialog
+        id={`${idPrefix}-dialog-${index}`}
+        class="fixed inset-0 z-50 p-0 m-auto bg-transparent backdrop:bg-black/85 backdrop:backdrop-blur-md max-w-[92vw] max-h-[92vh] rounded-2xl overflow-hidden focus:outline-none"
+        onclick="this.close()"
+      >
+        <form method="dialog" class="relative flex flex-col justify-between max-h-[92vh]">
+          {/* Close Button */}
+          <button
+            type="submit"
+            class="absolute top-4 right-4 z-50 bg-black/70 text-white hover:bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition border border-neutral-700 cursor-pointer"
+          >
+            ✕
+          </button>
+
+          {/* High-Resolution Modal View */}
+          <div
+            class="p-4 sm:p-8 flex items-center justify-center max-h-[75vh] overflow-hidden"
+            onclick="arguments[0]?.stopPropagation()"
+          >
+            <Image
+              src={guitar.data.image}
+              alt={guitar.data.title}
+              width={1400}
+              class="max-w-full max-h-[70vh] object-contain mx-auto rounded-lg drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Caption & Details Bar */}
+          <div
+            class="w-full bg-neutral-950/95 backdrop-blur-md p-5 text-center border-t border-neutral-800 text-white"
+            onclick="arguments[0]?.stopPropagation()"
+          >
+            <h3 class="text-base font-bold text-white">{guitar.data.title}</h3>
+            <p class="mt-1 text-sm text-neutral-300 max-w-2xl mx-auto">{guitar.data.caption}</p>
+            {guitar.data.details && (
+              <p class="mt-2 text-xs text-neutral-400 max-w-xl mx-auto leading-relaxed">{guitar.data.details}</p>
+            )}
+          </div>
+        </form>
+      </dialog>
+    ))
+  }
+</div>
+
+<style>
+  dialog[open] {
+    animation: fadeIn 0.2s ease-out;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

@@ -1,6 +1,24 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
-import { glob } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
+
+export const BandEnum = z.enum([
+  'North Sea Echoes',
+  'Kings of Mercia',
+  'Tuesday The Sky',
+  'Fates Warning',
+  'Arch / Matheos',
+  'Tim Bowness',
+  'goestoeleven',
+  'Headless',
+  'Jim Matheos',
+  'OSI',
+  'Memories Of Machines',
+  'Gordian Knot',
+  'John Arch',
+]);
+
+export const GearStatusEnum = z.enum(['current', 'past']);
 
 const metadataDefinition = () =>
   z
@@ -66,6 +84,43 @@ const postCollection = defineCollection({
   }),
 });
 
+const discographyCollection = defineCollection({
+  loader: file('src/content/discography.json'),
+  schema: ({ image }) =>
+    z.object({
+      id: z.string(),
+      year: z.number().int().min(1980).max(2035),
+      band: BandEnum,
+      album: z.string().min(1),
+      comments: z.string().optional(),
+      coverImage: image().optional(),
+      links: z
+        .array(
+          z.object({
+            label: z.string(),
+            url: z.url(),
+          })
+        )
+        .optional(),
+    }),
+});
+
+const gearCollection = defineCollection({
+  loader: file('src/content/gear.json'),
+  schema: ({ image }) =>
+    z.object({
+      id: z.string(),
+      title: z.string().min(1),
+      status: GearStatusEnum,
+      caption: z.string().min(1),
+      image: image(),
+      details: z.string().optional(),
+      order: z.number().int().default(99),
+    }),
+});
+
 export const collections = {
   post: postCollection,
+  discography: discographyCollection,
+  gear: gearCollection,
 };

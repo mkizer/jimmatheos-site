@@ -256,3 +256,15 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export interface AggregatedPost {
+  id: string;
+  title: string;
+  publishDate: Date;
+  excerpt?: string;
+  link: string;
+  source: string;
+  sourceId: string;
+  isExternal: boolean;
+  image?: ImageMetadata | string;
+}

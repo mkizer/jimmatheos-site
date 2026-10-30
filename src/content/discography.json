@@ -1,0 +1,449 @@
+[
+  {
+    "id": "nse-really-good-terrible-things-2024",
+    "year": 2024,
+    "band": "North Sea Echoes",
+    "album": "Really Good Terrible Things",
+    "links": [
+      { "label": "Band Website", "url": "https://northseaechoes.com/" },
+      { "label": "Metal Blade Records", "url": "https://www.metalblade.com/us/artists/north-sea-echoes/" }
+    ]
+  },
+  {
+    "id": "kom-kings-of-mercia-2022",
+    "year": 2022,
+    "band": "Kings of Mercia",
+    "album": "Kings of Mercia",
+    "links": [
+      { "label": "Band Website", "url": "https://kingsofmercia.com/" },
+      { "label": "Metal Blade Records", "url": "https://www.metalblade.com/kingsofmercia/" }
+    ]
+  },
+  {
+    "id": "tts-blurred-horizon-2021",
+    "year": 2021,
+    "band": "Tuesday The Sky",
+    "album": "The Blurred Horizon",
+    "links": [
+      { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/2TgDOax" }
+    ]
+  },
+  {
+    "id": "fw-long-day-good-night-2020",
+    "year": 2020,
+    "band": "Fates Warning",
+    "album": "Long Day Good Night",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/2VLUgjT" }
+    ]
+  },
+  {
+    "id": "am-winter-ethereal-2019",
+    "year": 2019,
+    "band": "Arch / Matheos",
+    "album": "Winter Ethereal",
+    "links": [
+      { "label": "Band Website", "url": "https://archmatheos.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/2LO2q4b" }
+    ]
+  },
+  {
+    "id": "tb-flowers-at-the-scene-2019",
+    "year": 2019,
+    "band": "Tim Bowness",
+    "album": "Flowers At The Scene",
+    "comments": "Guitar on 'Rainmark', guitar solo on the title track 'Flowers At The Scene', and verse guitars on 'It's The World'",
+    "links": [
+      { "label": "Artist Website", "url": "https://timbowness.co.uk/" },
+      { "label": "Purchase", "url": "https://amzn.to/2LMr6dG" }
+    ]
+  },
+  {
+    "id": "gte-try-me-2018",
+    "year": 2018,
+    "band": "goestoeleven",
+    "album": "Try Me",
+    "comments": "Recorded guitars for this cover of UFO's 'Try Me'",
+    "links": [
+      { "label": "SoundCloud", "url": "https://soundcloud.com/goestoeleven" },
+      { "label": "Listen", "url": "https://soundcloud.com/goestoeleven/try-me" }
+    ]
+  },
+  {
+    "id": "fw-live-over-europe-2018",
+    "year": 2018,
+    "band": "Fates Warning",
+    "album": "Live Over Europe",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/2zQDt3J" }
+    ]
+  },
+  {
+    "id": "fw-awaken-the-guardian-live-2017",
+    "year": 2017,
+    "band": "Fates Warning",
+    "album": "Awaken The Guardian – Live",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/2LPFXUv" }
+    ]
+  },
+  {
+    "id": "tts-drift-2017",
+    "year": 2017,
+    "band": "Tuesday The Sky",
+    "album": "Drift",
+    "links": [
+      { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/2klkp5U" }
+    ]
+  },
+  {
+    "id": "fw-theories-of-flight-2016",
+    "year": 2016,
+    "band": "Fates Warning",
+    "album": "Theories Of Flight",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/28HGLyG" }
+    ]
+  },
+  {
+    "id": "headless-melt-the-ice-away-2016",
+    "year": 2016,
+    "band": "Headless",
+    "album": "Melt The Ice Away",
+    "comments": "Guitar on the track 'Frame'",
+    "links": [
+      { "label": "Band Website", "url": "http://www.headlessofficial.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/1rsh6bl" }
+    ]
+  },
+  {
+    "id": "jm-halo-effect-2014",
+    "year": 2014,
+    "band": "Jim Matheos",
+    "album": "Halo Effect",
+    "coverImage": "../assets/images/HaloEffect.png",
+    "links": [
+      { "label": "Artist Website", "url": "https://jimmatheos.com/" },
+      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/label/product/138/5440/" }
+    ]
+  },
+  {
+    "id": "fw-darkness-in-a-different-light-2013",
+    "year": 2013,
+    "band": "Fates Warning",
+    "album": "Darkness In A Different Light",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://amzn.to/1tyvwsj" }
+    ]
+  },
+  {
+    "id": "osi-fire-make-thunder-2012",
+    "year": 2012,
+    "band": "OSI",
+    "album": "Fire Make Thunder",
+    "links": [
+      { "label": "Band Website", "url": "https://osiband.net/" },
+      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/osi/" }
+    ]
+  },
+  {
+    "id": "mom-warm-winter-2011",
+    "year": 2011,
+    "band": "Memories Of Machines",
+    "album": "Warm Winter",
+    "comments": "Guitar atmospherics on the track 'Something In Our Lives'",
+    "links": [
+      { "label": "Band Website", "url": "http://www.memoriesofmachines.com/" },
+      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/artrock/product/86/2768/remove/3266/" }
+    ]
+  },
+  {
+    "id": "am-sympathetic-resonance-2011",
+    "year": 2011,
+    "band": "Arch / Matheos",
+    "album": "Sympathetic Resonance",
+    "links": [
+      { "label": "Band Website", "url": "http://archmatheos.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/band/arch-matheos" }
+    ]
+  },
+  {
+    "id": "osi-blood-2009",
+    "year": 2009,
+    "band": "OSI",
+    "album": "Blood",
+    "links": [
+      { "label": "Band Website", "url": "https://osiband.net/" },
+      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/osi/product/46/3456/" }
+    ]
+  },
+  {
+    "id": "osi-re-free-2006",
+    "year": 2006,
+    "band": "OSI",
+    "album": "Re: Free",
+    "comments": "An EP of remixes from the album Free",
+    "links": [
+      { "label": "Band Website", "url": "https://osiband.net/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000ION6VS" }
+    ]
+  },
+  {
+    "id": "osi-free-2006",
+    "year": 2006,
+    "band": "OSI",
+    "album": "Free",
+    "links": [
+      { "label": "Band Website", "url": "https://osiband.net/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000F0V00E" }
+    ]
+  },
+  {
+    "id": "fw-live-in-athens-2005",
+    "year": 2005,
+    "band": "Fates Warning",
+    "album": "Live In Athens [Video]",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000BLI5SW" }
+    ]
+  },
+  {
+    "id": "fw-fwx-2004",
+    "year": 2004,
+    "band": "Fates Warning",
+    "album": "FWX",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11419" }
+    ]
+  },
+  {
+    "id": "fw-the-view-from-here-2003",
+    "year": 2003,
+    "band": "Fates Warning",
+    "album": "The View From Here [Video]",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000087F6H" }
+    ]
+  },
+  {
+    "id": "gk-emergent-2003",
+    "year": 2003,
+    "band": "Gordian Knot",
+    "album": "Emergent",
+    "comments": "Guitar on tracks 'Fischer's Gambit', 'Some Brighter Thing', and 'Singing Deep Mountain'",
+    "links": [{ "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00007KSAB" }]
+  },
+  {
+    "id": "osi-office-of-strategic-influence-2003",
+    "year": 2003,
+    "band": "OSI",
+    "album": "Office Of Strategic Influence",
+    "links": [
+      { "label": "Band Website", "url": "https://osiband.net/" },
+      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/osi/product/46/3631/" }
+    ]
+  },
+  {
+    "id": "ja-a-twist-of-fate-2003",
+    "year": 2003,
+    "band": "John Arch",
+    "album": "A Twist of Fate",
+    "links": [
+      { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/John_Arch" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00009N1YM" }
+    ]
+  },
+  {
+    "id": "fw-holy-dio-2000",
+    "year": 2000,
+    "band": "Fates Warning",
+    "album": "Holy Dio (A Tribute To Ronnie James Dio)",
+    "comments": "Fates Warning covered the Black Sabbath track 'Sign Of The Southern Cross' for this compilation",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000046Q1F" }
+    ]
+  },
+  {
+    "id": "fw-disconnected-2000",
+    "year": 2000,
+    "band": "Fates Warning",
+    "album": "Disconnected",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11418" }
+    ]
+  },
+  {
+    "id": "fw-live-at-the-dynamo-2000",
+    "year": 2000,
+    "band": "Fates Warning",
+    "album": "Live at the Dynamo [Video]",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11421" }
+    ]
+  },
+  {
+    "id": "jm-away-with-words-1999",
+    "year": 1999,
+    "band": "Jim Matheos",
+    "album": "Away With Words",
+    "links": [
+      { "label": "Artist Website", "url": "https://jimmatheos.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00000K092" }
+    ]
+  },
+  {
+    "id": "fw-still-life-1998",
+    "year": 1998,
+    "band": "Fates Warning",
+    "album": "Still Life",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00000C2GN" }
+    ]
+  },
+  {
+    "id": "fw-a-pleasant-shade-of-gray-live-1998",
+    "year": 1998,
+    "band": "Fates Warning",
+    "album": "A Pleasant Shade Of Gray (Live) [Video]",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/6304901356" }
+    ]
+  },
+  {
+    "id": "fw-a-tribute-to-judas-priest-1997",
+    "year": 1997,
+    "band": "Fates Warning",
+    "album": "A Tribute To Judas Priest (Legends Of Metal)",
+    "comments": "Fates Warning covered the track 'Saints In Hell' for this compilation",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000005HMN" }
+    ]
+  },
+  {
+    "id": "fw-a-pleasant-shade-of-gray-1997",
+    "year": 1997,
+    "band": "Fates Warning",
+    "album": "A Pleasant Shade Of Gray",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11415" }
+    ]
+  },
+  {
+    "id": "fw-workingman-rush-tribute-1996",
+    "year": 1996,
+    "band": "Fates Warning",
+    "album": "Workingman (A Tribute To Rush)",
+    "comments": "Fates Warning covered the track 'Closer To The Heart' for this compilation",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000003ZBB" }
+    ]
+  },
+  {
+    "id": "fw-chasing-time-1995",
+    "year": 1995,
+    "band": "Fates Warning",
+    "album": "Chasing Time",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000001C8G" }
+    ]
+  },
+  {
+    "id": "fw-inside-out-1994",
+    "year": 1994,
+    "band": "Fates Warning",
+    "album": "Inside Out",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/14537" }
+    ]
+  },
+  {
+    "id": "jm-first-impressions-1993",
+    "year": 1993,
+    "band": "Jim Matheos",
+    "album": "First Impressions",
+    "links": [
+      { "label": "Artist Website", "url": "https://jimmatheos.com/" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000001C68" }
+    ]
+  },
+  {
+    "id": "fw-parallels-1991",
+    "year": 1991,
+    "band": "Fates Warning",
+    "album": "Parallels",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11428" }
+    ]
+  },
+  {
+    "id": "fw-perfect-symmetry-1989",
+    "year": 1989,
+    "band": "Fates Warning",
+    "album": "Perfect Symmetry",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11430" }
+    ]
+  },
+  {
+    "id": "fw-no-exit-1988",
+    "year": 1988,
+    "band": "Fates Warning",
+    "album": "No Exit",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11425" }
+    ]
+  },
+  {
+    "id": "fw-awaken-the-guardian-1986",
+    "year": 1986,
+    "band": "Fates Warning",
+    "album": "Awaken The Guardian",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11417" }
+    ]
+  },
+  {
+    "id": "fw-the-spectre-within-1985",
+    "year": 1985,
+    "band": "Fates Warning",
+    "album": "The Spectre Within",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11432" }
+    ]
+  },
+  {
+    "id": "fw-night-on-brocken-1984",
+    "year": 1984,
+    "band": "Fates Warning",
+    "album": "Night On Bröcken",
+    "links": [
+      { "label": "Band Website", "url": "https://fateswarning.com/" },
+      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11423" }
+    ]
+  }
+]

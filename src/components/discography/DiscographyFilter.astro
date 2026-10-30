@@ -1,0 +1,99 @@
+---
+export interface Props {
+  bands: string[];
+  selectedBand?: string;
+  targetSelector?: string;
+}
+
+const { bands, selectedBand = 'all', targetSelector = '[data-discography-item]' } = Astro.props;
+---
+
+<discography-filter data-target={targetSelector} class="block mb-8">
+  <div class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter discography by band">
+    <span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mr-1">Filter by Band:</span>
+    <button
+      type="button"
+      data-filter="all"
+      aria-pressed={selectedBand === 'all' ? 'true' : 'false'}
+      class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white aria-pressed:bg-white aria-pressed:text-neutral-950 aria-pressed:border-white cursor-pointer"
+    >
+      All Releases
+    </button>
+    {
+      bands.map((band) => (
+        <button
+          type="button"
+          data-filter={band}
+          aria-pressed={selectedBand === band ? 'true' : 'false'}
+          class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white aria-pressed:bg-white aria-pressed:text-neutral-950 aria-pressed:border-white cursor-pointer"
+        >
+          {band}
+        </button>
+      ))
+    }
+  </div>
+</discography-filter>
+
+<script>
+  class DiscographyFilter extends HTMLElement {
+    connectedCallback() {
+      const targetSelector = this.dataset.target || '[data-discography-item]';
+      const buttons = this.querySelectorAll<HTMLButtonElement>('button[data-filter]');
+
+      const applyFilter = (filterBand: string, updateUrl = true) => {
+        // 1. Update active button aria-pressed
+        buttons.forEach((btn) => {
+          const isActive = btn.dataset.filter === filterBand;
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        // 2. Filter discography items
+        const items = document.querySelectorAll<HTMLElement>(targetSelector);
+        let visibleCount = 0;
+        items.forEach((item) => {
+          const itemBand = item.dataset.band;
+          if (filterBand === 'all' || itemBand === filterBand) {
+            item.style.display = '';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Toggle empty message
+        const emptyMsg = document.getElementById('discography-empty-message');
+        if (emptyMsg) {
+          emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // 3. Update URL search params
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          if (filterBand === 'all') {
+            url.searchParams.delete('band');
+          } else {
+            url.searchParams.set('band', filterBand);
+          }
+          window.history.replaceState({}, '', url.toString());
+        }
+      };
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter || 'all';
+          applyFilter(filter);
+        });
+      });
+
+      // Synchronize from URL if search param exists
+      const initialParam = new URLSearchParams(window.location.search).get('band');
+      if (initialParam) {
+        applyFilter(initialParam, false);
+      }
+    }
+  }
+
+  if (!customElements.get('discography-filter')) {
+    customElements.define('discography-filter', DiscographyFilter);
+  }
+</script>

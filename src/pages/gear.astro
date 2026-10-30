@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import GuitarAlbum from '~/components/gear/GuitarAlbum.astro';
+import AmpsEffectsList from '~/components/gear/AmpsEffectsList.astro';
+import RigDiagrams from '~/components/gear/RigDiagrams.astro';
+
+const allGuitars = await getCollection('gear');
+
+// Sort by defined order
+const sortedGuitars = allGuitars.sort((a, b) => a.data.order - b.data.order);
+
+const currentGuitars = sortedGuitars.filter((g) => g.data.status === 'current');
+const pastGuitars = sortedGuitars.filter((g) => g.data.status === 'past');
+
+const metadata = {
+  title: 'Gear | Jim Matheos',
+  description:
+    'Explore Jim Matheos’s equipment: Current and Past Guitars, Mesa Boogie MK IV amps, Kemper profiler, rack effects, pedals, and live rig diagrams.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Gear</h1>
+      <p class="mt-4 text-lg text-neutral-400 font-medium max-w-2xl mx-auto">
+        An archive of instruments, amplification, signal chains, and touring rigs that define Jim Matheos’s sound.
+      </p>
+
+      {/* Sticky Quick-Jump Anchor Bar */}
+      <nav
+        aria-label="Gear section navigation"
+        class="mt-8 flex flex-wrap justify-center gap-2 sticky top-20 z-30 py-3 bg-neutral-950/80 backdrop-blur-md rounded-2xl border border-neutral-800/80 px-4"
+      >
+        <a
+          href="#current-guitars"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+        >
+          Current Guitars ({currentGuitars.length})
+        </a>
+        <a
+          href="#past-guitars"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+        >
+          Past Guitars ({pastGuitars.length})
+        </a>
+        <a
+          href="#amps-effects"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+        >
+          Amps & Effects
+        </a>
+        <a
+          href="#rig-diagrams"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+        >
+          Rig Diagrams
+        </a>
+      </nav>
+    </div>
+
+    {/* Current Guitars Section */}
+    <section id="current-guitars" class="scroll-mt-32">
+      <GuitarAlbum
+        guitars={currentGuitars}
+        idPrefix="current"
+        title="Current Guitars"
+        subtitle="Instruments currently in Jim's active studio recording and touring arsenal. Click any guitar to expand."
+      />
+    </section>
+
+    {/* Past Guitars Section */}
+    <section id="past-guitars" class="scroll-mt-32">
+      <GuitarAlbum
+        guitars={pastGuitars}
+        idPrefix="past"
+        title="Past Guitars"
+        subtitle="Instruments from historic tours and classic 1980s and 1990s recording sessions."
+      />
+    </section>
+
+    {/* Amps & Effects Section */}
+    <section id="amps-effects" class="scroll-mt-32">
+      <AmpsEffectsList />
+    </section>
+
+    {/* Live Rig Diagrams Section */}
+    <section id="rig-diagrams" class="scroll-mt-32">
+      <RigDiagrams />
+    </section>
+  </section>
+</Layout>

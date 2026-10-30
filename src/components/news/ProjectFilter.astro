@@ -1,0 +1,99 @@
+---
+export interface Props {
+  sources: Array<{ id: string; name: string }>;
+  selectedSource?: string;
+  targetSelector?: string;
+}
+
+const { sources, selectedSource = 'all', targetSelector = '[data-news-item]' } = Astro.props;
+---
+
+<project-filter data-target={targetSelector} class="block mb-8">
+  <div class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter news by project">
+    <span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mr-1">Filter:</span>
+    <button
+      type="button"
+      data-filter="all"
+      aria-pressed={selectedSource === 'all' ? 'true' : 'false'}
+      class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white aria-pressed:bg-white aria-pressed:text-neutral-950 aria-pressed:border-white cursor-pointer"
+    >
+      All Projects
+    </button>
+    {
+      sources.map((src) => (
+        <button
+          type="button"
+          data-filter={src.id}
+          aria-pressed={selectedSource === src.id ? 'true' : 'false'}
+          class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white aria-pressed:bg-white aria-pressed:text-neutral-950 aria-pressed:border-white cursor-pointer"
+        >
+          {src.name}
+        </button>
+      ))
+    }
+  </div>
+</project-filter>
+
+<script>
+  class ProjectFilter extends HTMLElement {
+    connectedCallback() {
+      const targetSelector = this.dataset.target || '[data-news-item]';
+      const buttons = this.querySelectorAll<HTMLButtonElement>('button[data-filter]');
+
+      const applyFilter = (filterId: string, updateUrl = true) => {
+        // 1. Update button states
+        buttons.forEach((btn) => {
+          const isActive = btn.dataset.filter === filterId;
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        // 2. Filter item visibility
+        const items = document.querySelectorAll<HTMLElement>(targetSelector);
+        let visibleCount = 0;
+        items.forEach((item) => {
+          const sourceId = item.dataset.sourceId;
+          if (filterId === 'all' || sourceId === filterId) {
+            item.style.display = '';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Handle empty message if present
+        const emptyMsg = document.getElementById('news-empty-message');
+        if (emptyMsg) {
+          emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // 3. Sync with URL search params
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          if (filterId === 'all') {
+            url.searchParams.delete('source');
+          } else {
+            url.searchParams.set('source', filterId);
+          }
+          window.history.replaceState({}, '', url.toString());
+        }
+      };
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter || 'all';
+          applyFilter(filter);
+        });
+      });
+
+      // Initialize from URL search param if present
+      const initialParam = new URLSearchParams(window.location.search).get('source');
+      if (initialParam) {
+        applyFilter(initialParam, false);
+      }
+    }
+  }
+
+  if (!customElements.get('project-filter')) {
+    customElements.define('project-filter', ProjectFilter);
+  }
+</script>

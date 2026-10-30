@@ -1,110 +1,215 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Note from '~/components/widgets/Note.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import YouTubeEmbed from '~/components/common/YouTubeEmbed.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import Button from '~/components/ui/Button.astro';
+import AggregatedNewsCard from '~/components/news/AggregatedNewsCard.astro';
+import { getAggregatedNews } from '~/utils/aggregatedNews';
+import jimHeroPortrait from '~/assets/images/gallery/jim.jpg';
 
 const metadata = {
-  title: 'North Sea Echoes',
+  title: 'Jim Matheos | Official Website',
   ignoreTitleTemplate: true,
+  description:
+    'Official website and central hub for guitarist, composer, and producer Jim Matheos (Fates Warning, OSI, Arch / Matheos, North Sea Echoes, Kings of Mercia, Tuesday The Sky).',
 };
+
+// Top 4 latest aggregated news posts
+const latestNews = (await getAggregatedNews()).slice(0, 4);
+
+const projects = [
+  {
+    name: 'Fates Warning',
+    tagline: 'Pioneers of Progressive Metal',
+    desc: 'Founding member, guitarist, and principal composer across twelve landmark studio albums spanning over four decades.',
+    link: 'https://fateswarning.com/',
+    filter: 'Fates Warning',
+    isExternal: true,
+  },
+  {
+    name: 'North Sea Echoes',
+    tagline: 'Atmospheric & Melancholy Rock',
+    desc: 'Introspective duo collaboration with vocalist Ray Alder, featuring delicate acoustic arrangements and cinematic soundscapes.',
+    link: 'https://northseaechoes.com/',
+    filter: 'North Sea Echoes',
+    isExternal: true,
+  },
+  {
+    name: 'Kings of Mercia',
+    tagline: 'Hard Rock Powerhouse',
+    desc: 'High-octane collaboration with vocalist Steve Overland, drummer Simon Phillips, and bassist Joey Vera.',
+    link: 'https://kingsofmercia.com/',
+    filter: 'Kings of Mercia',
+    isExternal: true,
+  },
+  {
+    name: 'Tuesday The Sky',
+    tagline: 'Instrumental Ambient & Post-Rock',
+    desc: 'Atmospheric sonic explorations featuring hypnotic rhythms, electronic textures, and guest percussion by Gavin Harrison.',
+    link: 'https://tuesdaythesky.com/',
+    filter: 'Tuesday The Sky',
+    isExternal: true,
+  },
+  {
+    name: 'Arch / Matheos',
+    tagline: 'Progressive Metal Heavyweights',
+    desc: 'Dynamic reunion with original Fates Warning singer John Arch, releasing Sympathetic Resonance and Winter Ethereal.',
+    link: '/discography?band=Arch+%2F+Matheos',
+    filter: 'Arch / Matheos',
+    isExternal: false,
+  },
+  {
+    name: 'OSI',
+    tagline: 'Electro-Progressive Collective',
+    desc: 'Cult-favorite collaboration with Kevin Moore, combining heavy riffing with atmospheric synth programming.',
+    link: '/discography?band=OSI',
+    filter: 'OSI',
+    isExternal: false,
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Content Widget **************** -->
+  <!-- Hero Section ******************* -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-neutral-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="md:col-span-7 text-center md:text-left order-2 md:order-1">
+          <span
+            class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-neutral-400 border border-neutral-800 bg-neutral-900/60 mb-4"
+          >
+            Official Central Hub
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-heading">Jim Matheos</h1>
+          <p class="mt-2 text-xl font-medium text-neutral-400">Guitarist · Composer · Producer</p>
+          <p class="mt-6 text-base text-neutral-300 leading-relaxed max-w-xl mx-auto md:mx-0">
+            Welcome to the central home for all of Jim Matheos's musical endeavors. Explore four decades of discography,
+            studio equipment and guitar archives, and unified news from across every active project.
+          </p>
 
-  <Content
-    isAfterContent
-    isBeforeContent
-    isReversed
-    items={[
+          <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
+            <Button variant="primary" href="/discography" class="rounded-full px-6 py-2.5 font-semibold text-sm">
+              View Discography
+            </Button>
+            <Button variant="secondary" href="/gear" class="rounded-full px-6 py-2.5 font-semibold text-sm">
+              Explore Gear
+            </Button>
+            <Button variant="tertiary" href="/news" class="rounded-full px-6 py-2.5 text-sm">
+              Latest News &rarr;
+            </Button>
+          </div>
+        </div>
+
+        <!-- Hero Portrait Image -->
+        <div class="md:col-span-5 order-1 md:order-2 flex justify-center">
+          <div
+            class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shadow-black/80"
+          >
+            <Image
+              src={jimHeroPortrait}
+              alt="Jim Matheos"
+              width={700}
+              height={700}
+              loading="eager"
+              fetchpriority="high"
+              class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
+            />
+            <div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Projects Hub Section ********** -->
+  <section class="py-16 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Musical Projects</h2>
+      <p class="mt-3 text-base text-neutral-400 max-w-2xl mx-auto">
+        Jim's extensive creative spectrum spans progressive metal, acoustic introspection, ambient electronica, and
+        classic hard rock.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {
-        title: 'Jeff Wagner, author of the Fates Warning book "Destination Onward"',
-        description:
-          '"Throughout Really Good Terrible Things [debut album], Matheos and Alder serve up the kind of seductive melancholy Fates Warning fans will recognize. Yet there’s a thoroughly different approach here: vocals are delivered with a sort of nostalgic sadness, and the guitar work is layered in such a way as to feel dreamlike. These are rich sonic landscapes, visiting places haunting, beautiful, spectral and secret. The Matheos/Alder partnership is taken to some new and wonderful places here."',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/NSE_2024_05.jpg',
-      alt: 'North Sea Echoes 2024',
-      caption: 'Photo by Laurie Matheos',
-      captionJustification: 'right',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">North Sea Echoes</h3>
-      A project by Ray Alder and Jim Matheos
-    </Fragment>
+        projects.map((proj) => (
+          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm flex flex-col justify-between transition-all duration-300 hover:border-neutral-700 hover:bg-neutral-900/70 hover:shadow-xl hover:shadow-black/40">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white">{proj.name}</h3>
+                {proj.isExternal && <Icon name="tabler:external-link" class="w-4 h-4 text-neutral-500" />}
+              </div>
+              <p class="text-xs font-semibold text-neutral-400 mb-3">{proj.tagline}</p>
+              <p class="text-xs text-neutral-300 leading-relaxed">{proj.desc}</p>
+            </div>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+            <div class="mt-6 pt-4 border-t border-neutral-800/60 flex items-center justify-between">
+              <a
+                href={proj.link}
+                target={proj.isExternal ? '_blank' : undefined}
+                rel={proj.isExternal ? 'noopener noreferrer' : undefined}
+                class="text-xs font-semibold text-neutral-300 hover:text-white transition inline-flex items-center gap-1"
+              >
+                <span>{proj.isExternal ? 'Visit Website' : 'Explore Albums'}</span> &rarr;
+              </a>
+              <a
+                href={`/discography?band=${encodeURIComponent(proj.filter)}`}
+                class="text-[11px] text-neutral-400 hover:text-neutral-300 transition"
+              >
+                Releases
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 
-  <!-- Note Widget ******************* -->
+  <!-- Latest Aggregated News *********** -->
+  <section class="py-16 sm:py-20 border-t border-neutral-800/80 bg-neutral-950/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold">Unified Feed</span>
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-1">Latest Updates</h2>
+          <p class="mt-2 text-sm text-neutral-400">
+            Recent announcements, releases, and updates across Jim's projects.
+          </p>
+        </div>
+        <a
+          href="/news"
+          class="text-sm font-semibold text-neutral-300 hover:text-white transition inline-flex items-center gap-1.5 shrink-0"
+        >
+          <span>View All News</span> &rarr;
+        </a>
+      </div>
 
-  <Note title="How to Cast a Shadow" description="~ new album out now!" />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {latestNews.map((post) => <AggregatedNewsCard post={post} />)}
+      </div>
+    </div>
+  </section>
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    isBeforeContent
-    image={{
-      src: '~/assets/images/HTCAS_cover.jpg',
-      alt: 'How to Cast a Shadow (2026)',
-      caption: 'How to Cast a Shadow (2026)',
-      captionJustification: 'center',
-    }}
-  >
-    <Fragment slot="content">
-      <YouTubeEmbed id="SCT5So6Jmlc" title="Good Enough" class="w-full max-w-[560px]" />
-      <br />
-      <YouTubeEmbed id="tkPqCTGQQhc" title="I'll Leave a Light On" class="w-full max-w-[560px]" />
-      <br />
-      <YouTubeEmbed id="sbXCX_P617k" title="Enjoy the View" class="w-full max-w-[560px]" />
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- LatestPosts Widget ******* -->
-
-  <BlogLatestPosts
-    isBeforeContent
-    title="Latest News"
-    information={`The latest news, announcements, and updates from North Sea Echoes.`}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    image={{
-      src: '~/assets/images/HTCAS_cover.jpg',
-      alt: 'How to Cast a Shadow',
-      width: 300,
-      height: 300,
-    }}
-    imagePosition="left"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Order Here',
-        href: 'https://www.metalblade.com/northseaechoes/',
-        target: '_blank',
-        icon: 'tabler:external-link',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">"How to Cast a Shadow"</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">New album out now!</Fragment>
-  </CallToAction>
+  <!-- Gear & Rig Teaser ***************** -->
+  <section class="py-16 sm:py-20 border-t border-neutral-800/80 max-w-6xl mx-auto px-4 sm:px-6">
+    <div
+      class="rounded-3xl border border-neutral-800 bg-neutral-900/30 p-8 sm:p-12 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-8"
+    >
+      <div class="max-w-xl">
+        <span class="text-xs font-semibold uppercase tracking-wider text-neutral-400">Equipment Archive</span>
+        <h2 class="text-3xl font-bold tracking-tight text-white mt-1">The Sound & Rig</h2>
+        <p class="mt-3 text-sm text-neutral-300 leading-relaxed">
+          From the 1991 Mesa Boogie MK IV that shaped every Fates Warning record to custom PRS and Godin instruments,
+          rack processors, and detailed touring rig diagrams.
+        </p>
+      </div>
+      <div class="shrink-0 flex flex-wrap gap-3">
+        <Button variant="primary" href="/gear" class="rounded-full px-6 py-2.5 font-semibold text-sm">
+          Explore Gear & Rig
+        </Button>
+      </div>
+    </div>
+  </section>
 </Layout>
