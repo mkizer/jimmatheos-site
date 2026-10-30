@@ -4,7 +4,6 @@ import { Icon } from 'astro-icon/components';
 
 import Layout from '~/layouts/PageLayout.astro';
 import Headline from '~/components/blog/Headline.astro';
-import Pagination from '~/components/blog/Pagination.astro';
 import ProjectFilter from '~/components/news/ProjectFilter.astro';
 import AggregatedNewsCard from '~/components/news/AggregatedNewsCard.astro';
 import { PROJECT_FEEDS } from '~/data/feeds.config';
@@ -14,14 +13,13 @@ import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
 export const prerender = true;
 
-export const getStaticPaths = (async ({ paginate }) => {
-  return await getStaticPathsBlogList({ paginate });
+export const getStaticPaths = (async () => {
+  return await getStaticPathsBlogList();
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { page } = Astro.props as Props;
-const currentPage = page.currentPage ?? 1;
+const { posts } = Astro.props as Props;
 
 const filterSources = [
   { id: 'jim-matheos', name: 'Jim Matheos' },
@@ -29,10 +27,10 @@ const filterSources = [
 ];
 
 const metadata = {
-  title: `News${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: 'News & Updates',
   description: "Latest news, announcements, and updates across Jim Matheos's projects.",
   robots: {
-    index: blogListRobots?.index && currentPage === 1,
+    index: blogListRobots?.index,
     follow: blogListRobots?.follow,
   },
   openGraph: {
@@ -74,19 +72,46 @@ const metadata = {
     </div>
 
     {/* Progressive Enhancement Filter */}
-    <ProjectFilter sources={filterSources} />
+    <ProjectFilter
+      sources={filterSources}
+      pageSize={12}
+      gridSelector="#news-grid"
+      targetSelector="[data-news-item]"
+      paginationSelector="#news-pagination"
+    />
 
     {/* Aggregated Grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      {page.data.map((post: AggregatedPost) => <AggregatedNewsCard post={post} />)}
+    <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {posts.map((post: AggregatedPost) => <AggregatedNewsCard post={post} />)}
     </div>
 
     <div id="news-empty-message" style="display: none;" class="text-center py-12 text-neutral-400 text-sm">
       No updates found for the selected project.
     </div>
 
-    <div class="mt-8">
-      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    {/* Dynamic Client-Side Pagination Controls */}
+    <div id="news-pagination" class="mt-8" style="display: none;">
+      <div class="flex flex-row items-center justify-between container mx-auto">
+        <button
+          type="button"
+          data-page-prev
+          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+        >
+          <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1" />
+          <span>Newer updates</span>
+        </button>
+
+        <span data-page-indicator class="text-sm text-neutral-400 font-medium"> Page 1 of 1 </span>
+
+        <button
+          type="button"
+          data-page-next
+          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+        >
+          <span>Older updates</span>
+          <Icon name="tabler:chevron-right" class="w-5 h-5 ml-1" />
+        </button>
+      </div>
     </div>
   </section>
 </Layout>

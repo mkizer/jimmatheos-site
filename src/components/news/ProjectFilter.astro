@@ -2,13 +2,29 @@
 export interface Props {
   sources: Array<{ id: string; name: string }>;
   selectedSource?: string;
+  pageSize?: number;
   targetSelector?: string;
+  gridSelector?: string;
+  paginationSelector?: string;
 }
 
-const { sources, selectedSource = 'all', targetSelector = '[data-news-item]' } = Astro.props;
+const {
+  sources,
+  selectedSource = 'all',
+  pageSize = 12,
+  targetSelector = '[data-news-item]',
+  gridSelector = '#news-grid',
+  paginationSelector = '#news-pagination',
+} = Astro.props;
 ---
 
-<project-filter data-target={targetSelector} class="block mb-8">
+<project-filter
+  data-target={targetSelector}
+  data-grid={gridSelector}
+  data-pagination={paginationSelector}
+  data-page-size={pageSize}
+  class="block mb-8"
+>
   <div class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter news by project">
     <span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mr-1">Filter:</span>
     <button
@@ -38,58 +54,154 @@ const { sources, selectedSource = 'all', targetSelector = '[data-news-item]' } =
   class ProjectFilter extends HTMLElement {
     connectedCallback() {
       const targetSelector = this.dataset.target || '[data-news-item]';
-      const buttons = this.querySelectorAll<HTMLButtonElement>('button[data-filter]');
+      const gridSelector = this.dataset.grid || '#news-grid';
+      const paginationSelector = this.dataset.pagination || '#news-pagination';
+      const pageSize = parseInt(this.dataset.pageSize || '12', 10);
 
-      const applyFilter = (filterId: string, updateUrl = true) => {
-        // 1. Update button states
+      const buttons = this.querySelectorAll<HTMLButtonElement>('button[data-filter]');
+      const paginationContainer = document.querySelector<HTMLElement>(paginationSelector);
+      const prevBtn = paginationContainer?.querySelector<HTMLButtonElement>('[data-page-prev]');
+      const nextBtn = paginationContainer?.querySelector<HTMLButtonElement>('[data-page-next]');
+      const indicator = paginationContainer?.querySelector<HTMLElement>('[data-page-indicator]');
+      const emptyMsg = document.getElementById('news-empty-message');
+      const gridEl = document.querySelector<HTMLElement>(gridSelector);
+
+      let currentFilter = 'all';
+      let currentPage = 1;
+
+      const render = (scrollToTop = false) => {
+        // 1. Update filter button pressed state
         buttons.forEach((btn) => {
-          const isActive = btn.dataset.filter === filterId;
+          const isActive = btn.dataset.filter === currentFilter;
           btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         });
 
-        // 2. Filter item visibility
-        const items = document.querySelectorAll<HTMLElement>(targetSelector);
-        let visibleCount = 0;
-        items.forEach((item) => {
+        // 2. Filter matching items
+        const allItems = Array.from(document.querySelectorAll<HTMLElement>(targetSelector));
+        const matchingItems = allItems.filter((item) => {
           const sourceId = item.dataset.sourceId;
-          if (filterId === 'all' || sourceId === filterId) {
+          return currentFilter === 'all' || sourceId === currentFilter;
+        });
+
+        const totalItems = matchingItems.length;
+        const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+
+        // Clamp currentPage within valid range
+        if (currentPage > totalPages) {
+          currentPage = totalPages;
+        }
+        if (currentPage < 1) {
+          currentPage = 1;
+        }
+
+        // 3. Show/hide empty message
+        if (emptyMsg) {
+          emptyMsg.style.display = totalItems === 0 ? 'block' : 'none';
+        }
+
+        // 4. Update visibility of items based on page slice
+        const startIndex = (currentPage - 1) * pageSize;
+        const endIndex = startIndex + pageSize;
+
+        // Hide items that don't match the current filter
+        allItems.forEach((item) => {
+          item.style.display = 'none';
+        });
+
+        // Display matching items within the current page window
+        matchingItems.forEach((item, index) => {
+          if (index >= startIndex && index < endIndex) {
             item.style.display = '';
-            visibleCount++;
           } else {
             item.style.display = 'none';
           }
         });
 
-        // Handle empty message if present
-        const emptyMsg = document.getElementById('news-empty-message');
-        if (emptyMsg) {
-          emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        // 5. Update pagination controls
+        if (paginationContainer) {
+          if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+          } else {
+            paginationContainer.style.display = '';
+
+            if (indicator) {
+              indicator.textContent = `Page ${currentPage} of ${totalPages}`;
+            }
+
+            if (prevBtn) {
+              prevBtn.disabled = currentPage <= 1;
+            }
+
+            if (nextBtn) {
+              nextBtn.disabled = currentPage >= totalPages;
+            }
+          }
         }
 
-        // 3. Sync with URL search params
-        if (updateUrl) {
-          const url = new URL(window.location.href);
-          if (filterId === 'all') {
-            url.searchParams.delete('source');
-          } else {
-            url.searchParams.set('source', filterId);
-          }
-          window.history.replaceState({}, '', url.toString());
+        // 6. Smoothly scroll to top of news grid when navigating pages
+        if (scrollToTop && gridEl) {
+          const gridTop = gridEl.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: gridTop, behavior: 'smooth' });
         }
+
+        // 7. Sync with URL search params
+        const url = new URL(window.location.href);
+        if (currentFilter === 'all') {
+          url.searchParams.delete('source');
+        } else {
+          url.searchParams.set('source', currentFilter);
+        }
+
+        if (currentPage > 1) {
+          url.searchParams.set('page', String(currentPage));
+        } else {
+          url.searchParams.delete('page');
+        }
+        window.history.replaceState({}, '', url.toString());
       };
 
+      // Filter button listeners
       buttons.forEach((btn) => {
         btn.addEventListener('click', () => {
           const filter = btn.dataset.filter || 'all';
-          applyFilter(filter);
+          if (filter !== currentFilter) {
+            currentFilter = filter;
+            currentPage = 1;
+            render(false);
+          }
         });
       });
 
-      // Initialize from URL search param if present
-      const initialParam = new URLSearchParams(window.location.search).get('source');
-      if (initialParam) {
-        applyFilter(initialParam, false);
+      // Pagination button listeners
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            render(true);
+          }
+        });
       }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentPage++;
+          render(true);
+        });
+      }
+
+      // Initialize state from URL search params if present
+      const params = new URLSearchParams(window.location.search);
+      const initialSource = params.get('source');
+      const initialPage = parseInt(params.get('page') || '1', 10);
+
+      if (initialSource) {
+        currentFilter = initialSource;
+      }
+      if (!isNaN(initialPage) && initialPage > 1) {
+        currentPage = initialPage;
+      }
+
+      render(false);
     }
   }
 

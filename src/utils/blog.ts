@@ -174,14 +174,16 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 };
 
 /** */
-export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
+export const getStaticPathsBlogList = async (_options?: { paginate?: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
   const { getAggregatedNews } = await import('~/utils/aggregatedNews');
   const allPosts = await getAggregatedNews();
-  return paginate(allPosts, {
-    params: { news: BLOG_BASE || undefined },
-    pageSize: blogPostsPerPage || 12,
-  });
+  return [
+    {
+      params: { news: BLOG_BASE || undefined, page: undefined },
+      props: { posts: allPosts },
+    },
+  ];
 };
 
 /** */
