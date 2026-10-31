@@ -70,19 +70,19 @@ const projectMilestones = [
   <section class="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
     <!-- Artist Portrait Card -->
     <div
-      class="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-8 backdrop-blur-sm mb-12 flex flex-col md:flex-row items-center gap-8"
+      class="rounded-2xl border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 p-6 sm:p-8 backdrop-blur-sm mb-12 flex flex-col md:flex-row items-center gap-8 shadow-sm"
     >
       <div
-        class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-neutral-700 shrink-0"
+        class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-neutral-300 dark:border-neutral-700 shrink-0"
       >
         <Image src={jimPortrait} alt="Jim Matheos" class="object-cover w-full h-full" width={400} height={400} />
       </div>
 
       <div class="text-center md:text-left">
-        <h2 class="text-3xl font-bold tracking-tight text-white font-heading">Jim Matheos</h2>
-        <p class="text-neutral-400 font-medium text-base mt-1">Guitarist · Composer · Producer</p>
-        <div class="w-16 h-0.5 bg-neutral-600 my-4 mx-auto md:mx-0"></div>
-        <p class="text-sm text-neutral-300 leading-relaxed">
+        <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white font-heading">Jim Matheos</h2>
+        <p class="text-neutral-600 dark:text-neutral-400 font-medium text-base mt-1">Guitarist · Composer · Producer</p>
+        <div class="w-16 h-0.5 bg-neutral-300 dark:bg-neutral-600 my-4 mx-auto md:mx-0"></div>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
           Over a four-decade career, Jim Matheos has established himself as one of modern music's most versatile,
           innovative, and influential guitarists. As the driving creative force and primary songwriter behind
           progressive metal pioneers Fates Warning, as well as visionary projects like OSI, Tuesday The Sky, Arch /
@@ -94,10 +94,10 @@ const projectMilestones = [
             href="https://www.facebook.com/JimMatheosOfficial"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5 text-xs font-semibold"
+            class="text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors inline-flex items-center gap-1.5 text-xs font-semibold"
             aria-label="Jim Matheos Official Facebook"
           >
-            <Icon name="tabler:brand-facebook" class="w-5 h-5 text-blue-400" />
+            <Icon name="tabler:brand-facebook" class="w-5 h-5 text-blue-500" />
             <span>Official Facebook</span>
           </a>
         </div>
@@ -105,8 +105,10 @@ const projectMilestones = [
     </div>
 
     <!-- Musical Journey & Narrative -->
-    <div class="prose prose-invert max-w-none space-y-6 text-neutral-300 leading-relaxed text-sm sm:text-base">
-      <h3 class="text-2xl font-bold text-white tracking-tight">The Architecture of Sound</h3>
+    <div
+      class="prose dark:prose-invert max-w-none space-y-6 text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm sm:text-base"
+    >
+      <h3 class="text-2xl font-bold text-neutral-900 dark:text-white tracking-tight">The Architecture of Sound</h3>
       <p>
         Beginning in the early 1980s in Connecticut, Jim Matheos co-founded <strong>Fates Warning</strong>, transforming
         the underground American metal scene through intricate compositions, complex time signatures, and deep emotional
@@ -144,25 +146,27 @@ const projectMilestones = [
 
     <!-- Projects Grid -->
     <div class="mt-14">
-      <h3 class="text-2xl font-bold text-white tracking-tight mb-6">Key Projects & Collaborations</h3>
+      <h3 class="text-2xl font-bold text-neutral-900 dark:text-white tracking-tight mb-6">
+        Key Projects & Collaborations
+      </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         {
           projectMilestones.map((project) => (
-            <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm flex flex-col justify-between">
+            <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 p-6 backdrop-blur-sm flex flex-col justify-between shadow-sm">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-2">
-                  <h4 class="text-lg font-bold text-white">{project.name}</h4>
-                  <span class="text-xs font-mono text-neutral-400">{project.period}</span>
+                  <h4 class="text-lg font-bold text-neutral-900 dark:text-white">{project.name}</h4>
+                  <span class="text-xs font-mono text-neutral-500 dark:text-neutral-400">{project.period}</span>
                 </div>
-                <p class="text-xs font-semibold text-neutral-400 mb-3">{project.role}</p>
-                <p class="text-xs text-neutral-300 leading-relaxed">{project.description}</p>
+                <p class="text-xs font-semibold text-neutral-600 dark:text-neutral-400 mb-3">{project.role}</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">{project.description}</p>
               </div>
-              <div class="mt-4 pt-3 border-t border-neutral-800/60">
+              <div class="mt-4 pt-3 border-t border-neutral-200 dark:border-neutral-800/60">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-xs text-neutral-400 hover:text-white transition inline-flex items-center gap-1 font-medium"
+                  class="text-xs text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition inline-flex items-center gap-1 font-medium"
                 >
                   <span>Visit website</span>
                   <Icon name="tabler:external-link" class="w-3.5 h-3.5" />

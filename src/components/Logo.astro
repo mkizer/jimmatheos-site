@@ -1,13 +1,27 @@
 ---
 import Image from '~/components/common/Image.astro';
-import logoImg from '~/assets/images/jmlogo2w.png';
+import logoDark from '~/assets/images/jmlogo2.png';
+import logoWhite from '~/assets/images/jmlogo2w.png';
 ---
 
+<!-- Light mode: dark charcoal logo -->
 <Image
-  src={logoImg}
+  src={logoDark}
   alt="Jim Matheos"
-  class="max-h-8 md:max-h-10 w-auto inline-block"
-  width={200}
-  height={40}
-  layout="fixed"
+  class="max-h-12 md:max-h-[70px] w-auto inline-block object-contain dark:hidden"
+  width={281}
+  height={70}
+  layout="constrained"
+  style="height: auto; max-height: 70px; width: auto;"
+/>
+
+<!-- Dark mode: white logo -->
+<Image
+  src={logoWhite}
+  alt="Jim Matheos"
+  class="max-h-12 md:max-h-[70px] w-auto hidden dark:inline-block object-contain"
+  width={281}
+  height={70}
+  layout="constrained"
+  style="height: auto; max-height: 70px; width: auto;"
 />

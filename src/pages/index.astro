@@ -1,89 +1,97 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
+import { Icon } from 'astro-icon/components';
 import AggregatedNewsCard from '~/components/news/AggregatedNewsCard.astro';
 import { getAggregatedNews } from '~/utils/aggregatedNews';
+
 import jimHeroPortrait from '~/assets/images/gallery/jim.jpg';
 
 const metadata = {
-  title: 'Jim Matheos | Official Website',
-  ignoreTitleTemplate: true,
+  title: 'Jim Matheos — Official Website',
   description:
-    'Official website and central hub for guitarist, composer, and producer Jim Matheos (Fates Warning, OSI, Arch / Matheos, North Sea Echoes, Kings of Mercia, Tuesday The Sky).',
+    'The central hub for guitarist, composer, and producer Jim Matheos (Fates Warning, OSI, North Sea Echoes, Kings of Mercia, Tuesday The Sky).',
+  ignoreTitleTemplate: true,
 };
 
-// Top 4 latest aggregated news posts
-const latestNews = (await getAggregatedNews()).slice(0, 4);
-
+// Projects definitions
 const projects = [
   {
     name: 'Fates Warning',
-    tagline: 'Pioneers of Progressive Metal',
-    desc: 'Founding member, guitarist, and principal composer across twelve landmark studio albums spanning over four decades.',
-    link: 'https://fateswarning.com/',
+    tagline: 'Pioneering Progressive Metal',
+    desc: 'Co-founded in 1982, Fates Warning defined the progressive metal genre across 13 studio albums over four decades.',
+    link: '/discography?band=Fates%20Warning',
     filter: 'Fates Warning',
-    isExternal: true,
+    isExternal: false,
   },
   {
     name: 'North Sea Echoes',
-    tagline: 'Atmospheric & Melancholy Rock',
-    desc: 'Introspective duo collaboration with vocalist Ray Alder, featuring delicate acoustic arrangements and cinematic soundscapes.',
-    link: 'https://northseaechoes.com/',
+    tagline: 'Acoustic / Ambient duo with Ray Alder',
+    desc: 'Intimate, cinematic musical landscapes blending acoustic songwriting with electronic textures.',
+    link: 'https://northseaechoes.com',
     filter: 'North Sea Echoes',
     isExternal: true,
   },
   {
     name: 'Kings of Mercia',
-    tagline: 'Hard Rock Powerhouse',
-    desc: 'High-octane collaboration with vocalist Steve Overland, drummer Simon Phillips, and bassist Joey Vera.',
-    link: 'https://kingsofmercia.com/',
+    tagline: 'Classic Heavy Rock with Steve Overland',
+    desc: 'Melodic hard rock collaboration featuring Steve Overland (FM), Simon Phillips, and Joey Vera.',
+    link: 'https://kingsofmercia.com',
     filter: 'Kings of Mercia',
     isExternal: true,
   },
   {
     name: 'Tuesday The Sky',
-    tagline: 'Instrumental Ambient & Post-Rock',
-    desc: 'Atmospheric sonic explorations featuring hypnotic rhythms, electronic textures, and guest percussion by Gavin Harrison.',
-    link: 'https://tuesdaythesky.com/',
+    tagline: 'Instrumental Ambient & Atmospheric',
+    desc: 'Experimental solo outlet exploring ambient soundscapes, atmospheric guitars, and electronica.',
+    link: 'https://tuesdaythesky.com',
     filter: 'Tuesday The Sky',
     isExternal: true,
   },
   {
     name: 'Arch / Matheos',
-    tagline: 'Progressive Metal Heavyweights',
-    desc: 'Dynamic reunion with original Fates Warning singer John Arch, releasing Sympathetic Resonance and Winter Ethereal.',
-    link: '/discography?band=Arch+%2F+Matheos',
+    tagline: 'Heavy Progressive Collaboration',
+    desc: 'Reuniting original Fates Warning vocalist John Arch and Jim Matheos for epic progressive masterpieces.',
+    link: '/discography?band=Arch%20%2F%20Matheos',
     filter: 'Arch / Matheos',
     isExternal: false,
   },
   {
     name: 'OSI',
-    tagline: 'Electro-Progressive Collective',
-    desc: 'Cult-favorite collaboration with Kevin Moore, combining heavy riffing with atmospheric synth programming.',
+    tagline: 'Experimental Progressive Rock & Metal',
+    desc: 'Influential studio project created with Kevin Moore (ex-Dream Theater) featuring guest drummers Mike Portnoy and Gavin Harrison.',
     link: '/discography?band=OSI',
     filter: 'OSI',
     isExternal: false,
   },
 ];
+
+// Top 4 latest aggregated news posts
+const latestNews = (await getAggregatedNews()).slice(0, 4);
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Section ******************* -->
-  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-neutral-800/80">
+  <section
+    class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-neutral-200 dark:border-neutral-800/80"
+  >
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
         <!-- Hero Text -->
         <div class="md:col-span-7 text-center md:text-left order-2 md:order-1">
           <span
-            class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-neutral-400 border border-neutral-800 bg-neutral-900/60 mb-4"
+            class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 mb-4 shadow-sm"
           >
             Official Central Hub
           </span>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-heading">Jim Matheos</h1>
-          <p class="mt-2 text-xl font-medium text-neutral-400">Guitarist · Composer · Producer</p>
-          <p class="mt-6 text-base text-neutral-300 leading-relaxed max-w-xl mx-auto md:mx-0">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white font-heading"
+          >
+            Jim Matheos
+          </h1>
+          <p class="mt-2 text-xl font-medium text-neutral-600 dark:text-neutral-400">Guitarist · Composer · Producer</p>
+          <p class="mt-6 text-base text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-xl mx-auto md:mx-0">
             Welcome to the central home for all of Jim Matheos's musical endeavors. Explore four decades of discography,
             studio equipment and guitar archives, and unified news from across every active project.
           </p>
@@ -104,7 +112,7 @@ const projects = [
         <!-- Hero Portrait Image -->
         <div class="md:col-span-5 order-1 md:order-2 flex justify-center">
           <div
-            class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shadow-black/80"
+            class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl shadow-neutral-300/40 dark:shadow-2xl dark:shadow-black/80"
           >
             <Image
               src={jimHeroPortrait}
@@ -115,7 +123,10 @@ const projects = [
               fetchpriority="high"
               class="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
             />
-            <div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none"></div>
+            <div
+              class="absolute inset-0 ring-1 ring-inset ring-black/5 dark:ring-white/10 rounded-3xl pointer-events-none"
+            >
+            </div>
           </div>
         </div>
       </div>
@@ -125,8 +136,8 @@ const projects = [
   <!-- The Projects Hub Section ********** -->
   <section class="py-16 sm:py-20 max-w-6xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Musical Projects</h2>
-      <p class="mt-3 text-base text-neutral-400 max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">Musical Projects</h2>
+      <p class="mt-3 text-base text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
         Jim's extensive creative spectrum spans progressive metal, acoustic introspection, ambient electronica, and
         classic hard rock.
       </p>
@@ -135,28 +146,30 @@ const projects = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         projects.map((proj) => (
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 backdrop-blur-sm flex flex-col justify-between transition-all duration-300 hover:border-neutral-700 hover:bg-neutral-900/70 hover:shadow-xl hover:shadow-black/40">
+          <div class="rounded-2xl border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 p-6 backdrop-blur-sm flex flex-col justify-between transition-all duration-300 hover:border-neutral-400 dark:hover:border-neutral-700 hover:bg-white dark:hover:bg-neutral-900/70 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/40">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="text-xl font-bold text-white">{proj.name}</h3>
-                {proj.isExternal && <Icon name="tabler:external-link" class="w-4 h-4 text-neutral-500" />}
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-white">{proj.name}</h3>
+                {proj.isExternal && (
+                  <Icon name="tabler:external-link" class="w-4 h-4 text-neutral-400 dark:text-neutral-500" />
+                )}
               </div>
-              <p class="text-xs font-semibold text-neutral-400 mb-3">{proj.tagline}</p>
-              <p class="text-xs text-neutral-300 leading-relaxed">{proj.desc}</p>
+              <p class="text-xs font-semibold text-neutral-500 dark:text-neutral-400 mb-3">{proj.tagline}</p>
+              <p class="text-xs text-neutral-600 dark:text-neutral-300 leading-relaxed">{proj.desc}</p>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-neutral-800/60 flex items-center justify-between">
+            <div class="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-800/60 flex items-center justify-between">
               <a
                 href={proj.link}
                 target={proj.isExternal ? '_blank' : undefined}
                 rel={proj.isExternal ? 'noopener noreferrer' : undefined}
-                class="text-xs font-semibold text-neutral-300 hover:text-white transition inline-flex items-center gap-1"
+                class="text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white transition inline-flex items-center gap-1"
               >
                 <span>{proj.isExternal ? 'Visit Website' : 'Explore Albums'}</span> &rarr;
               </a>
               <a
                 href={`/discography?band=${encodeURIComponent(proj.filter)}`}
-                class="text-[11px] text-neutral-400 hover:text-neutral-300 transition"
+                class="text-[11px] text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 transition"
               >
                 Releases
               </a>
@@ -168,19 +181,25 @@ const projects = [
   </section>
 
   <!-- Latest Aggregated News *********** -->
-  <section class="py-16 sm:py-20 border-t border-neutral-800/80 bg-neutral-950/40">
+  <section
+    class="py-16 sm:py-20 border-t border-neutral-200 dark:border-neutral-800/80 bg-neutral-200/40 dark:bg-neutral-950/40"
+  >
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
         <div>
-          <span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold">Unified Feed</span>
-          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-1">Latest Updates</h2>
-          <p class="mt-2 text-sm text-neutral-400">
+          <span class="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold"
+            >Unified Feed</span
+          >
+          <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl mt-1">
+            Latest Updates
+          </h2>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
             Recent announcements, releases, and updates across Jim's projects.
           </p>
         </div>
         <a
           href="/news"
-          class="text-sm font-semibold text-neutral-300 hover:text-white transition inline-flex items-center gap-1.5 shrink-0"
+          class="text-sm font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white transition inline-flex items-center gap-1.5 shrink-0"
         >
           <span>View All News</span> &rarr;
         </a>
@@ -193,14 +212,16 @@ const projects = [
   </section>
 
   <!-- Gear & Rig Teaser ***************** -->
-  <section class="py-16 sm:py-20 border-t border-neutral-800/80 max-w-6xl mx-auto px-4 sm:px-6">
+  <section class="py-16 sm:py-20 border-t border-neutral-200 dark:border-neutral-800/80 max-w-6xl mx-auto px-4 sm:px-6">
     <div
-      class="rounded-3xl border border-neutral-800 bg-neutral-900/30 p-8 sm:p-12 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-8"
+      class="rounded-3xl border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/30 p-8 sm:p-12 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm"
     >
       <div class="max-w-xl">
-        <span class="text-xs font-semibold uppercase tracking-wider text-neutral-400">Equipment Archive</span>
-        <h2 class="text-3xl font-bold tracking-tight text-white mt-1">The Sound & Rig</h2>
-        <p class="mt-3 text-sm text-neutral-300 leading-relaxed">
+        <span class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+          >Equipment Archive</span
+        >
+        <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white mt-1">The Sound & Rig</h2>
+        <p class="mt-3 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
           From the 1991 Mesa Boogie MK IV that shaped every Fates Warning record to custom PRS and Godin instruments,
           rack processors, and detailed touring rig diagrams.
         </p>

@@ -1,59 +1,60 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
 import GuitarAlbum from '~/components/gear/GuitarAlbum.astro';
 import AmpsEffectsList from '~/components/gear/AmpsEffectsList.astro';
 import RigDiagrams from '~/components/gear/RigDiagrams.astro';
+import { getCollection } from 'astro:content';
 
 const allGuitars = await getCollection('gear');
 
-// Sort by defined order
+// Sort guitars by order field
 const sortedGuitars = allGuitars.sort((a, b) => a.data.order - b.data.order);
 
 const currentGuitars = sortedGuitars.filter((g) => g.data.status === 'current');
 const pastGuitars = sortedGuitars.filter((g) => g.data.status === 'past');
 
 const metadata = {
-  title: 'Gear | Jim Matheos',
+  title: 'Equipment & Gear | Jim Matheos',
   description:
-    'Explore Jim Matheos’s equipment: Current and Past Guitars, Mesa Boogie MK IV amps, Kemper profiler, rack effects, pedals, and live rig diagrams.',
+    "Explore Jim Matheos's guitars, amplifiers, studio effects, and live touring rig diagrams spanning four decades.",
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Gear</h1>
-      <p class="mt-4 text-lg text-neutral-400 font-medium max-w-2xl mx-auto">
-        An archive of instruments, amplification, signal chains, and touring rigs that define Jim Matheos’s sound.
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl">Equipment & Gear</h1>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400 font-medium max-w-3xl mx-auto">
+        Four decades of instruments, tube amplification, studio rack gear, and live touring rig architectures.
       </p>
 
       {/* Sticky Quick-Jump Anchor Bar */}
       <nav
         aria-label="Gear section navigation"
-        class="mt-8 flex flex-wrap justify-center gap-2 sticky top-20 z-30 py-3 bg-neutral-950/80 backdrop-blur-md rounded-2xl border border-neutral-800/80 px-4"
+        class="mt-8 flex flex-wrap justify-center gap-2 sticky top-20 z-30 py-3 bg-white/90 dark:bg-neutral-950/80 backdrop-blur-md rounded-2xl border border-neutral-300 dark:border-neutral-800/80 px-4 shadow-sm"
       >
         <a
           href="#current-guitars"
-          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition shadow-sm"
         >
           Current Guitars ({currentGuitars.length})
         </a>
         <a
           href="#past-guitars"
-          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition shadow-sm"
         >
           Past Guitars ({pastGuitars.length})
         </a>
         <a
           href="#amps-effects"
-          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition shadow-sm"
         >
           Amps & Effects
         </a>
         <a
           href="#rig-diagrams"
-          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition shadow-sm"
         >
           Rig Diagrams
         </a>
@@ -70,22 +71,28 @@ const metadata = {
       />
     </section>
 
+    <hr class="border-neutral-200 dark:border-neutral-800/80 my-16" />
+
     {/* Past Guitars Section */}
     <section id="past-guitars" class="scroll-mt-32">
       <GuitarAlbum
         guitars={pastGuitars}
         idPrefix="past"
         title="Past Guitars"
-        subtitle="Instruments from historic tours and classic 1980s and 1990s recording sessions."
+        subtitle="Archival instruments utilized across classic Fates Warning and OSI albums and world tours."
       />
     </section>
+
+    <hr class="border-neutral-200 dark:border-neutral-800/80 my-16" />
 
     {/* Amps & Effects Section */}
     <section id="amps-effects" class="scroll-mt-32">
       <AmpsEffectsList />
     </section>
 
-    {/* Live Rig Diagrams Section */}
+    <hr class="border-neutral-200 dark:border-neutral-800/80 my-16" />
+
+    {/* Rig Diagrams Section */}
     <section id="rig-diagrams" class="scroll-mt-32">
       <RigDiagrams />
     </section>

@@ -26,12 +26,14 @@ const {
   class="block mb-8"
 >
   <div class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter news by project">
-    <span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mr-1">Filter:</span>
+    <span class="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold mr-1"
+      >Filter:</span
+    >
     <button
       type="button"
       data-filter="all"
       aria-pressed={selectedSource === 'all' ? 'true' : 'false'}
-      class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white aria-pressed:bg-white aria-pressed:text-neutral-950 aria-pressed:border-white cursor-pointer"
+      class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-950 dark:hover:text-white aria-pressed:bg-neutral-900 dark:aria-pressed:bg-white aria-pressed:text-white dark:aria-pressed:text-neutral-950 aria-pressed:border-neutral-900 dark:aria-pressed:border-white cursor-pointer"
     >
       All Projects
     </button>
@@ -41,7 +43,7 @@ const {
           type="button"
           data-filter={src.id}
           aria-pressed={selectedSource === src.id ? 'true' : 'false'}
-          class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white aria-pressed:bg-white aria-pressed:text-neutral-950 aria-pressed:border-white cursor-pointer"
+          class="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-950 dark:hover:text-white aria-pressed:bg-neutral-900 dark:aria-pressed:bg-white aria-pressed:text-white dark:aria-pressed:text-neutral-950 aria-pressed:border-neutral-900 dark:aria-pressed:border-white cursor-pointer"
         >
           {src.name}
         </button>

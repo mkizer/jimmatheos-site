@@ -30,13 +30,13 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="max-w-6xl mx-auto px-4 py-12">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Images</h1>
-      <p class="mt-4 text-lg text-neutral-400 font-medium">Promotional Photos</p>
-      <p class="mt-4 text-sm text-neutral-400">
+      <h1 class="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl">Images</h1>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400 font-medium">Promotional Photos</p>
+      <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
         Photos courtesy of <a
           href="https://jeremysaffer.com/"
           target="_blank"
-          class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+          class="text-neutral-900 hover:text-neutral-700 underline dark:text-gray-400 dark:hover:text-white transition duration-150 ease-in-out"
           >Jeremy Saffer</a
         > | Additional photos provided by Laurie Matheos | Click to view details.
       </p>
@@ -50,7 +50,7 @@ const metadata = {
             {/* 1. Clickable Card triggers the dialog via inline JavaScript button behavior */}
             <button
               onclick={`document.getElementById('dialog-${index}').showModal()`}
-              class="w-full text-left overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900/30 transition-all duration-300 hover:scale-[1.01] hover:border-neutral-700 block"
+              class="w-full text-left overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/30 transition-all duration-300 hover:scale-[1.01] hover:border-neutral-400 dark:hover:border-neutral-700 shadow-sm block cursor-pointer"
             >
               <Image
                 src={img.src}
@@ -86,10 +86,10 @@ const metadata = {
             />
             {/* Caption Bar */}
             <div
-              class="w-full bg-neutral-900/90 backdrop-blur-md p-4 text-center border-t border-neutral-800 text-white"
+              class="w-full bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md p-4 text-center border-t border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white"
               onclick="arguments[0]?.stopPropagation()"
             >
-              <p class="text-sm font-semibold text-neutral-200">
+              <p class="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
                 {img.meta.credits.length > 0 && (
                   <span>
                     Photo by{' '}
@@ -100,7 +100,7 @@ const metadata = {
                             href={credit.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="underline decoration-neutral-500 hover:decoration-white hover:text-white transition-colors"
+                            class="underline decoration-neutral-400 hover:decoration-neutral-900 hover:text-neutral-950 dark:decoration-neutral-500 dark:hover:decoration-white dark:hover:text-white transition-colors"
                           >
                             {credit.name}
                           </a>
@@ -112,11 +112,15 @@ const metadata = {
                     ))}
                   </span>
                 )}
-                {img.meta.credits.length > 0 && img.meta.year && <span class="mx-2 text-neutral-500">•</span>}
-                {img.meta.year && <span class="text-neutral-400">{img.meta.year}</span>}
+                {img.meta.credits.length > 0 && img.meta.year && (
+                  <span class="mx-2 text-neutral-400 dark:text-neutral-500">•</span>
+                )}
+                {img.meta.year && <span class="text-neutral-600 dark:text-neutral-400">{img.meta.year}</span>}
               </p>
               {img.meta.description && (
-                <p class="mt-1 text-xs text-neutral-400 max-w-xl mx-auto">{img.meta.description}</p>
+                <p class="mt-1 text-xs text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto">
+                  {img.meta.description}
+                </p>
               )}
             </div>
           </form>

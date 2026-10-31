@@ -83,8 +83,8 @@
 }
 
 #header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+  @apply bg-[#f4f4f5]/90 md:bg-[#f4f4f5]/90 md:backdrop-blur-md border-b border-neutral-300/80;
+  box-shadow: 0 0.375rem 1.5rem 0 rgb(0 0 0 / 5%);
 }
 
 .dark #header.scroll > div:first-child,

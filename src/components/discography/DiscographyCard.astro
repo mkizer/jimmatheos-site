@@ -14,21 +14,21 @@ const { year, band, album, comments, coverImage, links } = entry.data;
 const getBandBadgeClass = (bandName: string) => {
   switch (bandName) {
     case 'Fates Warning':
-      return 'bg-zinc-800 text-zinc-100 border-zinc-600';
+      return 'bg-zinc-200 text-zinc-900 border-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:border-zinc-600';
     case 'OSI':
-      return 'bg-neutral-800 text-neutral-200 border-neutral-600';
+      return 'bg-neutral-200 text-neutral-900 border-neutral-300 dark:bg-neutral-800 dark:text-neutral-200 dark:border-neutral-600';
     case 'Arch / Matheos':
-      return 'bg-stone-800 text-stone-200 border-stone-600';
+      return 'bg-stone-200 text-stone-900 border-stone-300 dark:bg-stone-800 dark:text-stone-200 dark:border-stone-600';
     case 'North Sea Echoes':
-      return 'bg-sky-950/80 text-sky-300 border-sky-800/60';
+      return 'bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-950/80 dark:text-sky-300 dark:border-sky-800/60';
     case 'Kings of Mercia':
-      return 'bg-amber-950/80 text-amber-300 border-amber-800/60';
+      return 'bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-950/80 dark:text-amber-300 dark:border-amber-800/60';
     case 'Tuesday The Sky':
-      return 'bg-indigo-950/80 text-indigo-300 border-indigo-800/60';
+      return 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-indigo-950/80 dark:text-indigo-300 dark:border-indigo-800/60';
     case 'Jim Matheos':
-      return 'bg-neutral-700 text-white border-neutral-500';
+      return 'bg-neutral-300 text-neutral-950 border-neutral-400 dark:bg-neutral-700 dark:text-white dark:border-neutral-500';
     default:
-      return 'bg-neutral-900 text-neutral-300 border-neutral-700';
+      return 'bg-neutral-200 text-neutral-800 border-neutral-300 dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700';
   }
 };
 ---
@@ -36,7 +36,7 @@ const getBandBadgeClass = (bandName: string) => {
 <article
   data-discography-item
   data-band={band}
-  class="group relative rounded-xl border border-neutral-800 bg-neutral-900/40 p-5 backdrop-blur-sm transition-all duration-300 hover:border-neutral-700 hover:bg-neutral-900/70 hover:shadow-lg hover:shadow-black/30 flex flex-col justify-between"
+  class="group relative rounded-xl border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 p-5 backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 dark:hover:border-neutral-700 hover:bg-white dark:hover:bg-neutral-900/70 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/30 flex flex-col justify-between"
 >
   <div>
     <div class="flex items-center justify-between gap-2 mb-3">
@@ -45,14 +45,14 @@ const getBandBadgeClass = (bandName: string) => {
       >
         {band}
       </span>
-      <span class="text-sm font-bold font-mono text-neutral-400">
+      <span class="text-sm font-bold font-mono text-neutral-600 dark:text-neutral-400">
         {year}
       </span>
     </div>
 
     {
       coverImage && (
-        <div class="mb-4 overflow-hidden rounded-lg border border-neutral-800 bg-neutral-950 aspect-square max-w-[200px] mx-auto">
+        <div class="mb-4 overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-950 aspect-square max-w-[200px] mx-auto">
           <Image
             src={coverImage}
             alt={`${album} album cover`}
@@ -64,25 +64,27 @@ const getBandBadgeClass = (bandName: string) => {
       )
     }
 
-    <h3 class="text-lg font-bold text-white group-hover:text-neutral-200 transition-colors">
+    <h3
+      class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors"
+    >
       {album}
     </h3>
 
-    {comments && <p class="mt-2 text-xs text-neutral-400 leading-relaxed italic">{comments}</p>}
+    {comments && <p class="mt-2 text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed italic">{comments}</p>}
   </div>
 
   {
     links && links.length > 0 && (
-      <div class="mt-4 pt-3 border-t border-neutral-800/60 flex flex-wrap gap-2 text-xs">
+      <div class="mt-4 pt-3 border-t border-neutral-200 dark:border-neutral-800/60 flex flex-wrap gap-2 text-xs">
         {links.map((link) => (
           <a
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-neutral-800/80 text-neutral-300 hover:bg-neutral-700 hover:text-white border border-neutral-700/60 transition text-[11px]"
+            class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-neutral-100 hover:bg-neutral-200 text-neutral-800 dark:bg-neutral-800/80 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-white border border-neutral-300 dark:border-neutral-700/60 transition text-[11px]"
           >
             <span>{link.label}</span>
-            <Icon name="tabler:external-link" class="w-3 h-3 text-neutral-400" />
+            <Icon name="tabler:external-link" class="w-3 h-3 text-neutral-500 dark:text-neutral-400" />
           </a>
         ))}
       </div>

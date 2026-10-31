@@ -45,17 +45,17 @@ const metadata = {
 
     {/* Facebook Social Stream Connection Card */}
     <div
-      class="mb-8 p-4 sm:p-5 rounded-xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      class="mb-8 p-4 sm:p-5 rounded-xl border border-neutral-300 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm"
     >
       <div class="flex items-center gap-3.5">
         <div
-          class="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/40 flex items-center justify-center shrink-0 text-blue-400"
+          class="w-10 h-10 rounded-full bg-blue-500/10 dark:bg-blue-600/20 border border-blue-500/30 dark:border-blue-500/40 flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400"
         >
           <Icon name="tabler:brand-facebook" class="w-5 h-5" />
         </div>
         <div>
-          <h3 class="text-sm font-semibold text-white">Jim Matheos Official Facebook</h3>
-          <p class="text-xs text-neutral-400">
+          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white">Jim Matheos Official Facebook</h3>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400">
             Follow Jim's official Facebook profile for personal notes, updates, and photos.
           </p>
         </div>
@@ -64,10 +64,10 @@ const metadata = {
         href="https://www.facebook.com/JimMatheosOfficial"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700 transition shrink-0"
+        class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-neutral-100 hover:bg-neutral-200 text-neutral-900 border border-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:border-neutral-700 transition shrink-0"
       >
         <span>View Facebook Page</span>
-        <Icon name="tabler:external-link" class="w-3.5 h-3.5 text-neutral-400" />
+        <Icon name="tabler:external-link" class="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400" />
       </a>
     </div>
 
@@ -95,18 +95,20 @@ const metadata = {
         <button
           type="button"
           data-page-prev
-          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-950 dark:hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer shadow-sm"
         >
           <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1" />
           <span>Newer updates</span>
         </button>
 
-        <span data-page-indicator class="text-sm text-neutral-400 font-medium"> Page 1 of 1 </span>
+        <span data-page-indicator class="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+          Page 1 of 1
+        </span>
 
         <button
           type="button"
           data-page-next
-          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition border border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-950 dark:hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer shadow-sm"
         >
           <span>Older updates</span>
           <Icon name="tabler:chevron-right" class="w-5 h-5 ml-1" />
