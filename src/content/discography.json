@@ -6,7 +6,7 @@
     "album": "Really Good Terrible Things",
     "links": [
       { "label": "Band Website", "url": "https://northseaechoes.com/" },
-      { "label": "Metal Blade Records", "url": "https://www.metalblade.com/us/artists/north-sea-echoes/" }
+      { "label": "Purchase", "url": "https://link.amazon/B01941OYL" }
     ]
   },
   {
@@ -16,7 +16,7 @@
     "album": "Kings of Mercia",
     "links": [
       { "label": "Band Website", "url": "https://kingsofmercia.com/" },
-      { "label": "Metal Blade Records", "url": "https://www.metalblade.com/kingsofmercia/" }
+      { "label": "Purchase", "url": "https://link.amazon/B0iKPKcrZ" }
     ]
   },
   {
@@ -26,7 +26,7 @@
     "album": "The Blurred Horizon",
     "links": [
       { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/2TgDOax" }
+      { "label": "Purchase", "url": "https://link.amazon/B04XuOFE9" }
     ]
   },
   {
@@ -36,7 +36,7 @@
     "album": "Long Day Good Night",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/2VLUgjT" }
+      { "label": "Purchase", "url": "https://link.amazon/B0c8EhENy" }
     ]
   },
   {
@@ -45,8 +45,8 @@
     "band": "Arch / Matheos",
     "album": "Winter Ethereal",
     "links": [
-      { "label": "Band Website", "url": "https://archmatheos.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/2LO2q4b" }
+      { "label": "Band Website", "url": "https://www.facebook.com/archmatheos" },
+      { "label": "Purchase", "url": "https://link.amazon/B0eNN7GUS" }
     ]
   },
   {
@@ -78,7 +78,7 @@
     "album": "Live Over Europe",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/2zQDt3J" }
+      { "label": "Purchase", "url": "https://link.amazon/B0fvUWTsx" }
     ]
   },
   {
@@ -88,7 +88,7 @@
     "album": "Awaken The Guardian – Live",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/2LPFXUv" }
+      { "label": "Purchase", "url": "https://link.amazon/B0fFA3yWV" }
     ]
   },
   {
@@ -98,7 +98,7 @@
     "album": "Drift",
     "links": [
       { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/2klkp5U" }
+      { "label": "Purchase", "url": "https://link.amazon/B086aKJnN" }
     ]
   },
   {
@@ -108,7 +108,7 @@
     "album": "Theories Of Flight",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/28HGLyG" }
+      { "label": "Purchase", "url": "https://link.amazon/B0bLVVQR5" }
     ]
   },
   {
@@ -129,8 +129,8 @@
     "album": "Halo Effect",
     "coverImage": "../assets/images/HaloEffect.png",
     "links": [
-      { "label": "Artist Website", "url": "https://jimmatheos.com/" },
-      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/label/product/138/5440/" }
+      { "label": "Artist Website", "url": "https://jimmatheos.com/2014-01-30-halo-effect-an-experimental-guitar-album-released" },
+      { "label": "Discogs", "url": "https://www.discogs.com/release/13599254-Jim-Matheos-Halo-Effect" }
     ]
   },
   {
@@ -140,7 +140,7 @@
     "album": "Darkness In A Different Light",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://amzn.to/1tyvwsj" }
+      { "label": "Purchase", "url": "https://link.amazon/B09iVIbDc" }
     ]
   },
   {
@@ -149,8 +149,8 @@
     "band": "OSI",
     "album": "Fire Make Thunder",
     "links": [
-      { "label": "Band Website", "url": "https://osiband.net/" },
-      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/osi/" }
+      { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
+      { "label": "Purchase", "url": "https://link.amazon/B0i6XoQOG" }
     ]
   },
   {
@@ -160,8 +160,8 @@
     "album": "Warm Winter",
     "comments": "Guitar atmospherics on the track 'Something In Our Lives'",
     "links": [
-      { "label": "Band Website", "url": "http://www.memoriesofmachines.com/" },
-      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/artrock/product/86/2768/remove/3266/" }
+      { "label": "Band Website", "url": "https://en.wikipedia.org/wiki/Memories_of_Machines" },
+      { "label": "Discogs", "url": "https://www.discogs.com/master/343680-Memories-Of-Machines-Warm-Winter" }
     ]
   },
   {
@@ -170,8 +170,8 @@
     "band": "Arch / Matheos",
     "album": "Sympathetic Resonance",
     "links": [
-      { "label": "Band Website", "url": "http://archmatheos.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/band/arch-matheos" }
+      { "label": "Band Website", "url": "https://www.facebook.com/archmatheos" },
+      { "label": "Purchase", "url": "https://link.amazon/B0iITcwWE" }
     ]
   },
   {
@@ -180,8 +180,8 @@
     "band": "OSI",
     "album": "Blood",
     "links": [
-      { "label": "Band Website", "url": "https://osiband.net/" },
-      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/osi/product/46/3456/" }
+      { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
+      { "label": "Purchase", "url": "https://link.amazon/B05s74GcY" }
     ]
   },
   {
@@ -191,8 +191,8 @@
     "album": "Re: Free",
     "comments": "An EP of remixes from the album Free",
     "links": [
-      { "label": "Band Website", "url": "https://osiband.net/" },
-      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000ION6VS" }
+      { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
+      { "label": "Purchase", "url": "https://link.amazon/B086y5dnT" }
     ]
   },
   {
@@ -201,7 +201,7 @@
     "band": "OSI",
     "album": "Free",
     "links": [
-      { "label": "Band Website", "url": "https://osiband.net/" },
+      { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
       { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000F0V00E" }
     ]
   },
@@ -222,7 +222,7 @@
     "album": "FWX",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11419" }
+      { "label": "Purchase", "url": "https://link.amazon/B0ei2YotM" }
     ]
   },
   {
@@ -241,7 +241,10 @@
     "band": "Gordian Knot",
     "album": "Emergent",
     "comments": "Guitar on tracks 'Fischer's Gambit', 'Some Brighter Thing', and 'Singing Deep Mountain'",
-    "links": [{ "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00007KSAB" }]
+    "links": [
+      { "label": "Band Website", "url": "https://en.wikipedia.org/wiki/Gordian_Knot_(band)" },
+      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00007KSAB" }
+    ]
   },
   {
     "id": "osi-office-of-strategic-influence-2003",
@@ -249,8 +252,8 @@
     "band": "OSI",
     "album": "Office Of Strategic Influence",
     "links": [
-      { "label": "Band Website", "url": "https://osiband.net/" },
-      { "label": "Burning Shed", "url": "https://www.burningshed.com/store/osi/product/46/3631/" }
+      { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
+      { "label": "Purchase", "url": "https://link.amazon/B08zUHMC1" }
     ]
   },
   {
@@ -281,17 +284,18 @@
     "album": "Disconnected",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11418" }
+      { "label": "Purchase", "url": "https://link.amazon/B0hzS02rt" }
     ]
   },
   {
     "id": "fw-live-at-the-dynamo-2000",
     "year": 2000,
     "band": "Fates Warning",
-    "album": "Live at the Dynamo [Video]",
+    "album": "Live at the Dynamo",
+    "comments": "Released on video (VHS) in 2000. CD and vinyl released in 2025",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11421" }
+      { "label": "Purchase", "url": "https://link.amazon/B03g3MFS5" }
     ]
   },
   {
@@ -301,7 +305,7 @@
     "album": "Away With Words",
     "links": [
       { "label": "Artist Website", "url": "https://jimmatheos.com/" },
-      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00000K092" }
+      { "label": "Purchase", "url": "https://link.amazon/B06cPKkm7" }
     ]
   },
   {
@@ -311,7 +315,7 @@
     "album": "Still Life",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00000C2GN" }
+      { "label": "Purchase", "url": "https://link.amazon/B03oMyI5q" }
     ]
   },
   {
@@ -342,7 +346,7 @@
     "album": "A Pleasant Shade Of Gray",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11415" }
+      { "label": "Purchase", "url": "https://link.amazon/B01ofvB3a" }
     ]
   },
   {
@@ -363,7 +367,7 @@
     "album": "Chasing Time",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000001C8G" }
+      { "label": "Purchase", "url": "https://link.amazon/B0elBvQHe" }
     ]
   },
   {
@@ -373,7 +377,7 @@
     "album": "Inside Out",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/14537" }
+      { "label": "Purchase", "url": "https://link.amazon/B0jix7Zw4" }
     ]
   },
   {
@@ -383,7 +387,7 @@
     "album": "First Impressions",
     "links": [
       { "label": "Artist Website", "url": "https://jimmatheos.com/" },
-      { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000001C68" }
+      { "label": "Purchase", "url": "https://link.amazon/B0ei0VPeu" }
     ]
   },
   {
@@ -393,7 +397,7 @@
     "album": "Parallels",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11428" }
+      { "label": "Purchase", "url": "https://link.amazon/B07To5LsE" }
     ]
   },
   {
@@ -403,7 +407,7 @@
     "album": "Perfect Symmetry",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11430" }
+      { "label": "Purchase", "url": "https://link.amazon/B07dVFnSj" }
     ]
   },
   {
@@ -413,7 +417,7 @@
     "album": "No Exit",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11425" }
+      { "label": "Purchase", "url": "https://link.amazon/B05esLL01" }
     ]
   },
   {
@@ -423,7 +427,7 @@
     "album": "Awaken The Guardian",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11417" }
+      { "label": "Purchase", "url": "https://link.amazon/B04jflOfi" }
     ]
   },
   {
@@ -433,7 +437,7 @@
     "album": "The Spectre Within",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11432" }
+      { "label": "Purchase", "url": "https://link.amazon/B07XZSzjl" }
     ]
   },
   {
@@ -443,7 +447,7 @@
     "album": "Night On Bröcken",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
-      { "label": "IndieMerch", "url": "https://www.indiemerch.com/metalbladerecords/item/11423" }
+      { "label": "Purchase", "url": "https://link.amazon/B0dZfhizH" }
     ]
   }
 ]
