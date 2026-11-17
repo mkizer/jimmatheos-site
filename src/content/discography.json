@@ -1,9 +1,43 @@
 [
   {
+    "id": "nse-how-to-cast-a-shadow-2026",
+    "year": 2026,
+    "band": "North Sea Echoes",
+    "album": "How to Cast a Shadow",
+    "coverImage": "../assets/images/HTCAS_cover.jpg",
+    "links": [
+      { "label": "Band Website", "url": "https://northseaechoes.com/" },
+      { "label": "Purchase", "url": "https://link.amazon/B0d0BRFgT" }
+    ]
+  },
+  {
+    "id": "tts-indoor-enthusiast-2025",
+    "year": 2025,
+    "band": "Tuesday The Sky",
+    "album": "Indoor Enthusiast",
+    "coverImage": "../assets/images/IndoorEnthusiast_cover.png",
+    "links": [
+      { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
+      { "label": "Purchase", "url": "https://link.amazon/B0hbTAz0s" }
+    ]
+  },
+  {
+    "id": "kom-kings-of-mercia-2024",
+    "year": 2024,
+    "band": "Kings of Mercia",
+    "album": "Battle Scars",
+    "coverImage": "../assets/images/battle_scars_cover.jpg",
+    "links": [
+      { "label": "Band Website", "url": "https://kingsofmercia.com/" },
+      { "label": "Purchase", "url": "https://link.amazon/B02ZOcNo2" }
+    ]
+  },
+  {
     "id": "nse-really-good-terrible-things-2024",
     "year": 2024,
     "band": "North Sea Echoes",
     "album": "Really Good Terrible Things",
+    "coverImage": "../assets/images/RGTT_cover.png",
     "links": [
       { "label": "Band Website", "url": "https://northseaechoes.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B01941OYL" }
@@ -14,6 +48,7 @@
     "year": 2022,
     "band": "Kings of Mercia",
     "album": "Kings of Mercia",
+    "coverImage": "../assets/images/kom_cover2.png",
     "links": [
       { "label": "Band Website", "url": "https://kingsofmercia.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0iKPKcrZ" }
@@ -24,6 +59,7 @@
     "year": 2021,
     "band": "Tuesday The Sky",
     "album": "The Blurred Horizon",
+    "coverImage": "../assets/images/TuesdayTheSky_TheBlurredHorizon_1024.jpg",
     "links": [
       { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B04XuOFE9" }
@@ -34,6 +70,7 @@
     "year": 2020,
     "band": "Fates Warning",
     "album": "Long Day Good Night",
+    "coverImage": "../assets/images/c_ldgn.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0c8EhENy" }
@@ -44,6 +81,7 @@
     "year": 2019,
     "band": "Arch / Matheos",
     "album": "Winter Ethereal",
+    "coverImage": "../assets/images/c_am_we.jpg",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/archmatheos" },
       { "label": "Purchase", "url": "https://link.amazon/B0eNN7GUS" }
@@ -54,6 +92,7 @@
     "year": 2019,
     "band": "Tim Bowness",
     "album": "Flowers At The Scene",
+    "coverImage": "../assets/images/TimBowness_FlowersAtTheScene.png",
     "comments": "Guitar on 'Rainmark', guitar solo on the title track 'Flowers At The Scene', and verse guitars on 'It's The World'",
     "links": [
       { "label": "Artist Website", "url": "https://timbowness.co.uk/" },
@@ -65,6 +104,7 @@
     "year": 2018,
     "band": "goestoeleven",
     "album": "Try Me",
+    "coverImage": "../assets/images/GoesToEleven_TryMe.jpg",
     "comments": "Recorded guitars for this cover of UFO's 'Try Me'",
     "links": [
       { "label": "SoundCloud", "url": "https://soundcloud.com/goestoeleven" },
@@ -76,6 +116,7 @@
     "year": 2018,
     "band": "Fates Warning",
     "album": "Live Over Europe",
+    "coverImage": "../assets/images/c_loe.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0fvUWTsx" }
@@ -86,6 +127,7 @@
     "year": 2017,
     "band": "Fates Warning",
     "album": "Awaken The Guardian – Live",
+    "coverImage": "../assets/images/c_atglive.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0fFA3yWV" }
@@ -96,6 +138,7 @@
     "year": 2017,
     "band": "Tuesday The Sky",
     "album": "Drift",
+    "coverImage": "../assets/images/tts_drift_cover_1024.jpg",
     "links": [
       { "label": "Band Website", "url": "https://tuesdaythesky.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B086aKJnN" }
@@ -106,6 +149,7 @@
     "year": 2016,
     "band": "Fates Warning",
     "album": "Theories Of Flight",
+    "coverImage": "../assets/images/c_tof.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0bLVVQR5" }
@@ -116,6 +160,7 @@
     "year": 2016,
     "band": "Headless",
     "album": "Melt The Ice Away",
+    "coverImage": "../assets/images/Headless_MeltTheIceAway.png",
     "comments": "Guitar on the track 'Frame'",
     "links": [
       { "label": "Band Website", "url": "http://www.headlessofficial.com/" },
@@ -138,6 +183,7 @@
     "year": 2013,
     "band": "Fates Warning",
     "album": "Darkness In A Different Light",
+    "coverImage": "../assets/images/c_diadl.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B09iVIbDc" }
@@ -148,6 +194,7 @@
     "year": 2012,
     "band": "OSI",
     "album": "Fire Make Thunder",
+    "coverImage": "../assets/images/OSI_FireMakeThunder.png",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
       { "label": "Purchase", "url": "https://link.amazon/B0i6XoQOG" }
@@ -158,6 +205,7 @@
     "year": 2011,
     "band": "Memories Of Machines",
     "album": "Warm Winter",
+    "coverImage": "../assets/images/MemoriesOfMachines_WarmWinter.jpg",
     "comments": "Guitar atmospherics on the track 'Something In Our Lives'",
     "links": [
       { "label": "Band Website", "url": "https://en.wikipedia.org/wiki/Memories_of_Machines" },
@@ -169,6 +217,7 @@
     "year": 2011,
     "band": "Arch / Matheos",
     "album": "Sympathetic Resonance",
+    "coverImage": "../assets/images/c_archmatheos.jpg",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/archmatheos" },
       { "label": "Purchase", "url": "https://link.amazon/B0iITcwWE" }
@@ -179,6 +228,7 @@
     "year": 2009,
     "band": "OSI",
     "album": "Blood",
+    "coverImage": "../assets/images/OSI_Blood.png",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
       { "label": "Purchase", "url": "https://link.amazon/B05s74GcY" }
@@ -189,6 +239,7 @@
     "year": 2006,
     "band": "OSI",
     "album": "Re: Free",
+    "coverImage": "../assets/images/OSI_reFree.png",
     "comments": "An EP of remixes from the album Free",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
@@ -200,6 +251,7 @@
     "year": 2006,
     "band": "OSI",
     "album": "Free",
+    "coverImage": "../assets/images/OSI_Free.png",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
       { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000F0V00E" }
@@ -210,6 +262,7 @@
     "year": 2005,
     "band": "Fates Warning",
     "album": "Live In Athens [Video]",
+    "coverImage": "../assets/images/FW_LiveInAthens.png",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000BLI5SW" }
@@ -220,6 +273,7 @@
     "year": 2004,
     "band": "Fates Warning",
     "album": "FWX",
+    "coverImage": "../assets/images/c_fwx.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0ei2YotM" }
@@ -230,6 +284,7 @@
     "year": 2003,
     "band": "Fates Warning",
     "album": "The View From Here [Video]",
+    "coverImage": "../assets/images/c_tvfh.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B000087F6H" }
@@ -240,6 +295,7 @@
     "year": 2003,
     "band": "Gordian Knot",
     "album": "Emergent",
+    "coverImage": "../assets/images/GordianKnow_Emergent.png",
     "comments": "Guitar on tracks 'Fischer's Gambit', 'Some Brighter Thing', and 'Singing Deep Mountain'",
     "links": [
       { "label": "Band Website", "url": "https://en.wikipedia.org/wiki/Gordian_Knot_(band)" },
@@ -251,6 +307,7 @@
     "year": 2003,
     "band": "OSI",
     "album": "Office Of Strategic Influence",
+    "coverImage": "../assets/images/OSI_OfficeOfStrategicInfluence.jpg",
     "links": [
       { "label": "Band Website", "url": "https://www.facebook.com/OSIofficial" },
       { "label": "Purchase", "url": "https://link.amazon/B08zUHMC1" }
@@ -261,6 +318,7 @@
     "year": 2003,
     "band": "John Arch",
     "album": "A Twist of Fate",
+    "coverImage": "../assets/images/c_atof.jpg",
     "links": [
       { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/John_Arch" },
       { "label": "Purchase", "url": "https://www.amazon.com/gp/product/B00009N1YM" }
@@ -271,6 +329,7 @@
     "year": 2000,
     "band": "Fates Warning",
     "album": "Holy Dio (A Tribute To Ronnie James Dio)",
+    "coverImage": "../assets/images/c_hd.jpg",
     "comments": "Fates Warning covered the Black Sabbath track 'Sign Of The Southern Cross' for this compilation",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
@@ -282,6 +341,7 @@
     "year": 2000,
     "band": "Fates Warning",
     "album": "Disconnected",
+    "coverImage": "../assets/images/c_d.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0hzS02rt" }
@@ -292,6 +352,7 @@
     "year": 2000,
     "band": "Fates Warning",
     "album": "Live at the Dynamo",
+    "coverImage": "../assets/images/c_latdv.jpg",
     "comments": "Released on video (VHS) in 2000. CD and vinyl released in 2025",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
@@ -303,6 +364,7 @@
     "year": 1999,
     "band": "Jim Matheos",
     "album": "Away With Words",
+    "coverImage": "../assets/images/c_aww.jpg",
     "links": [
       { "label": "Artist Website", "url": "https://jimmatheos.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B06cPKkm7" }
@@ -313,6 +375,7 @@
     "year": 1998,
     "band": "Fates Warning",
     "album": "Still Life",
+    "coverImage": "../assets/images/FW_StillLife.png",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B03oMyI5q" }
@@ -323,6 +386,7 @@
     "year": 1998,
     "band": "Fates Warning",
     "album": "A Pleasant Shade Of Gray (Live) [Video]",
+    "coverImage": "../assets/images/FW_APleasantShadeOfGrayLive_sq.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://www.amazon.com/gp/product/6304901356" }
@@ -333,6 +397,7 @@
     "year": 1997,
     "band": "Fates Warning",
     "album": "A Tribute To Judas Priest (Legends Of Metal)",
+    "coverImage": "../assets/images/c_ttjp.jpg",
     "comments": "Fates Warning covered the track 'Saints In Hell' for this compilation",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
@@ -344,6 +409,7 @@
     "year": 1997,
     "band": "Fates Warning",
     "album": "A Pleasant Shade Of Gray",
+    "coverImage": "../assets/images/c_apsog.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B01ofvB3a" }
@@ -354,6 +420,7 @@
     "year": 1996,
     "band": "Fates Warning",
     "album": "Workingman (A Tribute To Rush)",
+    "coverImage": "../assets/images/c_wm.jpg",
     "comments": "Fates Warning covered the track 'Closer To The Heart' for this compilation",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
@@ -365,6 +432,7 @@
     "year": 1995,
     "band": "Fates Warning",
     "album": "Chasing Time",
+    "coverImage": "../assets/images/c_ct.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0elBvQHe" }
@@ -375,6 +443,7 @@
     "year": 1994,
     "band": "Fates Warning",
     "album": "Inside Out",
+    "coverImage": "../assets/images/c_io.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0jix7Zw4" }
@@ -385,6 +454,7 @@
     "year": 1993,
     "band": "Jim Matheos",
     "album": "First Impressions",
+    "coverImage": "../assets/images/c_fi.jpg",
     "links": [
       { "label": "Artist Website", "url": "https://jimmatheos.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0ei0VPeu" }
@@ -395,6 +465,7 @@
     "year": 1991,
     "band": "Fates Warning",
     "album": "Parallels",
+    "coverImage": "../assets/images/c_p.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B07To5LsE" }
@@ -405,6 +476,7 @@
     "year": 1989,
     "band": "Fates Warning",
     "album": "Perfect Symmetry",
+    "coverImage": "../assets/images/c_ps.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B07dVFnSj" }
@@ -415,6 +487,7 @@
     "year": 1988,
     "band": "Fates Warning",
     "album": "No Exit",
+    "coverImage": "../assets/images/c_ne.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B05esLL01" }
@@ -425,6 +498,7 @@
     "year": 1986,
     "band": "Fates Warning",
     "album": "Awaken The Guardian",
+    "coverImage": "../assets/images/c_atg.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B04jflOfi" }
@@ -435,6 +509,7 @@
     "year": 1985,
     "band": "Fates Warning",
     "album": "The Spectre Within",
+    "coverImage": "../assets/images/c_tsw.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B07XZSzjl" }
@@ -445,6 +520,7 @@
     "year": 1984,
     "band": "Fates Warning",
     "album": "Night On Bröcken",
+    "coverImage": "../assets/images/c_nob.jpg",
     "links": [
       { "label": "Band Website", "url": "https://fateswarning.com/" },
       { "label": "Purchase", "url": "https://link.amazon/B0dZfhizH" }
