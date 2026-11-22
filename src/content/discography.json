@@ -174,7 +174,10 @@
     "album": "Halo Effect",
     "coverImage": "../assets/images/HaloEffect.png",
     "links": [
-      { "label": "Artist Website", "url": "https://jimmatheos.com/2014-01-30-halo-effect-an-experimental-guitar-album-released" },
+      {
+        "label": "Artist Website",
+        "url": "https://jimmatheos.com/2014-01-30-halo-effect-an-experimental-guitar-album-released"
+      },
       { "label": "Discogs", "url": "https://www.discogs.com/release/13599254-Jim-Matheos-Halo-Effect" }
     ]
   },

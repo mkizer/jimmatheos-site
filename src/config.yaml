@@ -16,7 +16,7 @@ metadata:
   openGraph:
     site_name: Jim Matheos
     images:
-      - url: '~/assets/images/gallery/jim.jpg'
+      - url: '~/assets/images/gallery/2017_03_jim.jpg'
         width: 1200
         height: 628
     type: website
