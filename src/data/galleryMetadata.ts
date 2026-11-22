@@ -27,91 +27,87 @@ export interface ProcessedGalleryImageMeta {
  * The year is always extracted from the filename pattern (e.g. `YYYY_NN`).
  */
 export const galleryMetadata: Record<string, GalleryImageMeta> = {
-  '2024_01.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
+  '1986_01_Explorer.jpg': {
+    credit1: { name: '', url: '' },
+    description: '1981 Gibson Explorer (White)',
+  },
+  '1989_01_BC Rich Black.jpg': {
+    credit1: { name: '', url: '' },
+    description: '1989 custom made BC Rich Gunslinger (Black)',
+  },
+  '1991_01_Jackson.jpg': {
+    credit1: { name: '', url: '' },
+    description: 'Terry Brown with Jim, recording Parallels.',
+  },
+  '1994_01_Black PRS.jpg': {
+    credit1: { name: '', url: '' },
     description: '',
   },
-  '2024_02.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
+  '2008_01_Sam Scorps.jpg': {
+    credit1: { name: '', url: '' },
     description: '',
   },
-  '2024_03.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
+  '2010_01_LA1.jpg': {
+    credit1: { name: 'Julie A. Ferguson', url: '' },
+    description: 'Fates Warning in Hollywood, CA - 03/19/2010',
   },
-  '2024_04.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
+  '2010_01_LA2.jpg': {
+    credit1: { name: 'Alex Solca', url: 'https://alexsolca.zenfolio.com/' },
+    description: 'Fates Warning in Hollywood, CA - 03/19/2010',
   },
-  '2024_05.jpg': {
+  '2010_01_Thessaloniki_20100327.jpg': {
+    credit1: { name: '', url: '' },
+    description: 'Fates Warning in Thessaloniki, Greece - 02/26/2010',
+  },
+  '2011_01_Essen Germany 2011.jpg': {
+    credit1: { name: 'H. Ransch', url: '' },
+    description: 'Fates Warning in Essen, Germany - 02/10/2011',
+  },
+  '2011_02_Fates_Warning_Essen_20110210_HR-63.jpg': {
+    credit1: { name: 'H. Ransch', url: '' },
+    description: 'Fates Warning in Essen, Germany - 02/10/2011',
+  },
+  '2011_03_Kerkrade Netherlands.jpg': {
+    credit1: { name: 'Jorg de Groot', url: '' },
+    description: 'Fates Warning in Kerkrade, Netherlands - 07/30/2011',
+  },
+  '2011_04_Studio - credit Lindsay Matheos.jpg': {
     credit1: { name: 'Laurie Matheos', url: '' },
-    description: '',
+    description: 'Studio 2011',
   },
-  '2024_06.jpg': {
+  '2017_01_Hug - credit Jeremy Saffer.jpg': {
     credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
     description: '',
   },
-  '2024_07.jpg': {
+  '2017_02_Point - credit Jeremey Saffer.jpg': {
     credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
     description: '',
   },
-  '2024_08.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
+  '2017_03_jim.jpg': {
+    credit1: { name: 'PAG', url: 'https://www.facebook.com/pag.noble/' },
     description: '',
   },
-  '2024_09.png': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
+  '2017_04_Jim_Matheos_of_Fates_Warning_in_Bratislava_PAG.jpg': {
+    credit1: { name: 'PAG', url: 'https://www.facebook.com/pag.noble/' },
+    description: 'Fates Warning in Bratislava, Slovakia - 02/03/2017',
   },
-  '2024_10.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2024_11.jpg': {
+  '2017_05_JM_ItComesInWaves.jpg': {
     credit1: { name: 'Laurie Matheos', url: '' },
+    description: 'Tuesday The Sky "Drift" promo photo',
+  },
+  '2018_01_Matheos-2_Credit_Chris-Kissadjekian-20180126.jpg': {
+    credit1: { name: 'Chris Kissadjekian', url: '' },
+    description: 'Fates Warning in Thessaloniki, Greece - 01/26/2018',
+  },
+  '2019_01_jimmatheos.jpg': {
+    credit1: { name: 'Mark A. Cubbedge', url: 'https://www.markacubbedge.com/' },
     description: '',
   },
-  '2024_12.jpg': {
-    credit1: { name: 'Laurie Matheos', url: '' },
+  '2019_02_jimmatheos.jpg': {
+    credit1: { name: 'Mark A. Cubbedge', url: 'https://www.markacubbedge.com/' },
     description: '',
   },
-  '2024_13.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2024_14.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2024_15.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2024_16.jpg': {
-    credit1: { name: 'Laurie Matheos', url: '' },
-    description: '',
-  },
-  '2024_17.jpg': {
-    credit1: { name: 'Laurie Matheos', url: '' },
-    description: '',
-  },
-  '2024_18.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2024_19.jpg': {
-    credit1: { name: 'Laurie Matheos', url: '' },
-    description: '',
-  },
-  '2026_01.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2026_02.jpg': {
-    credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
-    description: '',
-  },
-  '2026_03.png': {
+  '2022_01_JM_Jeremy Saffer.jpg': {
     credit1: { name: 'Jeremy Saffer', url: 'https://jeremysaffer.com/' },
     description: '',
   },
